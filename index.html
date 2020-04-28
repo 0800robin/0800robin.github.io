@@ -72,24 +72,27 @@
     //}
 
     function draw() {
-      console.log(life / 10);
-      if (life / 10 == 0) {
-        background(250, OPACITY);
+      console.log("chance of line", life / 10);
+      let count = 0;
+      background(250, OPACITY);
+      smooth();
+      for (var x = 0; x < WIDTH; x += LINE_SIZE) {
+        for (var y = 0; y < HEIGHT; y += LINE_SIZE) {
+          if (Math.random() < life / 10) {
+            count++;
 
-      } else {
-        background(250, OPACITY);
-        smooth();
-        for (var x = 0; x < WIDTH; x += LINE_SIZE) {
-          for (var y = 0; y < HEIGHT; y += LINE_SIZE) {
-            if (Math.random() < life / 10) {
-              if (Math.random() < DIRECTION) {
-                line(x, y, x + LINE_SIZE, y + LINE_SIZE);
-              } else {
-                line(x + LINE_SIZE, y, x, y + LINE_SIZE);
-              }
+            if (Math.random() < DIRECTION) {
+              line(x, y, x + LINE_SIZE, y + LINE_SIZE);
+            } else {
+              line(x + LINE_SIZE, y, x, y + LINE_SIZE);
             }
           }
         }
+      }
+
+      if(count == 0) {
+        console.log("at ", life, " no lines were drawn")
+        document.getElementById('again').style = "display: none;";
       }
 
     };
