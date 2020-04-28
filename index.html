@@ -1,1 +1,99 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+  <title>Robin Hunter</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="spread">
+        <div>
+          <h1 class="bold">Robin Hunter</h1>
+          <p> I'm a Creative Technologist currently on sabbatical / in lock-down in the North-West of England. I very
+            much
+            enjoy building technology to help people express themselves & exploring the wide world of web development.
+          </p>
+        </div>
+        <div>
+          <small><i>Selected public projects</i></small>
+          <p><a href="/ocean.html">Ocean</a> - Make music with friends in your web browser.</p>
+          <p><a href="/acat.html">ACAT 2.0</a> - Using eye-tracking to give MND patients ability to talk.
+          </p>
+          <p><a href="/ufab.html">uFab</a> - Am AI-backed CRM quotation tool for machine shops.</p>
+        </div>
+        <p class="m-0">📧 robin(at)futurerob(dot)in</p>
+      </div>
+      <div>
+        <div id="sketch-holder">
+          <!-- Our sketch will go here! -->
+          <button onclick="again()" id="again">🔁</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+
+
+    let life = 10;
+    const DIRECTION = 0.5;
+
+    const OPACITY = 255;
+    const FRAME_RATE = 5;
+    const LINE_SIZE = 12;
+    const WIDTH = 500;
+    const HEIGHT = 500;
+
+
+    function again() {
+      life = life - life / 4;
+      redraw();
+    }
+
+
+    function setup() {
+      var canvas = createCanvas(WIDTH, HEIGHT);
+      canvas.parent('sketch-holder');
+      noLoop();
+    };
+
+    // myCustomRedrawAccordingToNewPropsHandler = function (props) {
+
+    // };
+
+    //mousePressed = function () {
+    //  redraw();
+    //}
+
+    function draw() {
+      console.log(life / 10);
+      if (life / 10 == 0) {
+        background(250, OPACITY);
+
+      } else {
+        background(250, OPACITY);
+        smooth();
+        for (var x = 0; x < WIDTH; x += LINE_SIZE) {
+          for (var y = 0; y < HEIGHT; y += LINE_SIZE) {
+            if (Math.random() < life / 10) {
+              if (Math.random() < DIRECTION) {
+                line(x, y, x + LINE_SIZE, y + LINE_SIZE);
+              } else {
+                line(x + LINE_SIZE, y, x, y + LINE_SIZE);
+              }
+            }
+          }
+        }
+      }
+
+    };
+  </script>
+</body>
+
+</html>
