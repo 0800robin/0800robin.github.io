@@ -1,96 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"
+    ></script>
+    <title>Robin Hunter</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
-  <title>Robin Hunter</title>
-</head>
-
-<body>
-  <div class="container">
-    <div class="content">
-      <div class="spread">
-        <div>
-          <h1 class="bold">Robin Hunter</h1>
-          <p> I'm a Creative Technologist currently on sabbatical / in lock-down in the North-West of England. I very
-            much
-            enjoy building technology to help people express themselves & exploring the wide world of web development.
-          </p>
-          <small class="m-0">📧 robin(@)futurerob(.)in</small>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="spread">
+          <div>
+            <h1 class="bold">Robin Hunter</h1>
+            <p>
+              I'm a Creative/Technologist usually based in London, currently on
+              sabbatical & in lock-down in the North-West of England. My main
+              focus is building technology to help people express themselves &
+              exploring the wide world of web development.
+            </p>
+            <small class="m-0">📧 robin(@)futurerob(.)in</small>
+          </div>
+          <div>
+            <p class="mb-0">
+              <a href="/ocean.html">Ocean</a> Make music friends using just your
+              web browser.
+            </p>
+            <p class="mb-0">
+              <a href="/acat.html">ACAT 2.0</a> An eye-tracking interface giving
+              MND patients ability to communicate.
+            </p>
+            <p class="mb-0">
+              <a href="/ufab.html">uFab</a> An AI-turbo-charged CRM quotation
+              tool for CNC machine shops.
+            </p>
+          </div>
         </div>
         <div>
-          <p><small><i>Selected public projects</i></small></p>
-          <h5 class="m-0"><a href="/ocean.html">Ocean</a> - Make music with friends in your web browser.</h5>
-          <h5 class="m-0"><a href="/acat.html">ACAT 2.0</a> - Using eye-tracking to give MND patients ability to talk.
-          </h5>
-          <h5 class="m-0"><a href="/ufab.html">uFab</a> - An AI-backed CRM quotation tool for machine shops.</h5>
-        </div>
-      </div>
-      <div>
-        <div id="sketch-holder" onclick="again()">
-          <!-- Our sketch will go here! -->
-          <!-- <button id="again">🔁</button> -->
+          <div id="sketch-holder" onclick="again()">
+            <!-- Our sketch will go here! -->
+            <!-- <button id="again">🔁</button> -->
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      let life = 10;
+      const DIRECTION = 0.5;
 
-  </div>
-  <script>
-    let life = 10;
-    const DIRECTION = 0.5;
+      const OPACITY = 255;
+      const FRAME_RATE = 5;
+      const LINE_SIZE = 10;
+      const WIDTH = document.getElementById("sketch-holder").offsetWidth;
+      const HEIGHT = document.getElementById("sketch-holder").offsetHeight;
 
-    const OPACITY = 255;
-    const FRAME_RATE = 5;
-    const LINE_SIZE = 10;
-    const WIDTH = document.getElementById("sketch-holder").offsetWidth;
-    const HEIGHT = document.getElementById("sketch-holder").offsetHeight;
+      function again() {
+        life = life - life / 4;
+        redraw();
+      }
 
-    function again() {
-      life = life - life / 4;
-      redraw();
-    }
+      function windowResized() {
+        resizeCanvas(
+          document.getElementById("sketch-holder").offsetWidth,
+          document.getElementById("sketch-holder").offsetHeight
+        );
+      }
 
-    function windowResized() {
-      resizeCanvas(document.getElementById("sketch-holder").offsetWidth, document.getElementById("sketch-holder").offsetHeight);
-    }
+      function setup() {
+        var canvas = createCanvas(WIDTH, HEIGHT);
+        canvas.parent("sketch-holder");
+        noLoop();
+      }
 
-
-
-    function setup() {
-      var canvas = createCanvas(WIDTH, HEIGHT);
-      canvas.parent('sketch-holder');
-      noLoop();
-    };
-
-    function draw() {
-      console.log("chance of line", life / 10);
-      let count = 0;
-      background(250, OPACITY);
-      smooth();
-      for (var x = 0; x < WIDTH; x += LINE_SIZE) {
-        for (var y = 0; y < HEIGHT; y += LINE_SIZE) {
-          if (Math.random() < life / 10) {
-            count++;
-
-            if (Math.random() < DIRECTION) {
-              line(x, y, x + LINE_SIZE, y + LINE_SIZE);
-            } else {
-              line(x + LINE_SIZE, y, x, y + LINE_SIZE);
+      function draw() {
+        console.log("chance of line", life / 10);
+        let count = 0;
+        background(250, OPACITY);
+        smooth();
+        for (var x = 0; x < WIDTH; x += LINE_SIZE) {
+          for (var y = 0; y < HEIGHT; y += LINE_SIZE) {
+            if (Math.random() < life / 10) {
+              count++;
+              if (Math.random() < DIRECTION) {
+                line(x, y, x + LINE_SIZE, y + LINE_SIZE);
+              } else {
+                line(x + LINE_SIZE, y, x, y + LINE_SIZE);
+              }
             }
           }
         }
+        if (count == 0) {
+          console.log("at ", life, " no lines were drawn");
+        }
       }
-
-      if (count == 0) {
-        console.log("at ", life, " no lines were drawn")
-        // document.getElementById('again').style = "display: none;";
-      }
-
-    };
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
