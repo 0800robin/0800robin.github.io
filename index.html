@@ -19,42 +19,44 @@
             much
             enjoy building technology to help people express themselves & exploring the wide world of web development.
           </p>
+          <small class="m-0">📧 robin(@)futurerob(.)in</small>
         </div>
         <div>
-          <small><i>Selected public projects</i></small>
-          <p><a href="/ocean.html">Ocean</a> - Make music with friends in your web browser.</p>
-          <p><a href="/acat.html">ACAT 2.0</a> - Using eye-tracking to give MND patients ability to talk.
-          </p>
-          <p><a href="/ufab.html">uFab</a> - An AI-backed CRM quotation tool for machine shops.</p>
+          <p><small><i>Selected public projects</i></small></p>
+          <h5 class="m-0"><a href="/ocean.html">Ocean</a> - Make music with friends in your web browser.</h5>
+          <h5 class="m-0"><a href="/acat.html">ACAT 2.0</a> - Using eye-tracking to give MND patients ability to talk.
+          </h5>
+          <h5 class="m-0"><a href="/ufab.html">uFab</a> - An AI-backed CRM quotation tool for machine shops.</h5>
         </div>
-        <p class="m-0">📧 robin(at)futurerob(dot)in</p>
       </div>
       <div>
-        <div id="sketch-holder">
+        <div id="sketch-holder" onclick="again()">
           <!-- Our sketch will go here! -->
-          <button onclick="again()" id="again">🔁</button>
+          <!-- <button id="again">🔁</button> -->
         </div>
       </div>
     </div>
 
   </div>
   <script>
-
-
     let life = 10;
     const DIRECTION = 0.5;
 
     const OPACITY = 255;
     const FRAME_RATE = 5;
     const LINE_SIZE = 10;
-    const WIDTH = 500;
-    const HEIGHT = 500;
-
+    const WIDTH = document.getElementById("sketch-holder").offsetWidth;
+    const HEIGHT = document.getElementById("sketch-holder").offsetHeight;
 
     function again() {
       life = life - life / 4;
       redraw();
     }
+
+    function windowResized() {
+      resizeCanvas(document.getElementById("sketch-holder").offsetWidth, document.getElementById("sketch-holder").offsetHeight);
+    }
+
 
 
     function setup() {
@@ -62,14 +64,6 @@
       canvas.parent('sketch-holder');
       noLoop();
     };
-
-    // myCustomRedrawAccordingToNewPropsHandler = function (props) {
-
-    // };
-
-    //mousePressed = function () {
-    //  redraw();
-    //}
 
     function draw() {
       console.log("chance of line", life / 10);
@@ -90,9 +84,9 @@
         }
       }
 
-      if(count == 0) {
+      if (count == 0) {
         console.log("at ", life, " no lines were drawn")
-        document.getElementById('again').style = "display: none;";
+        // document.getElementById('again').style = "display: none;";
       }
 
     };

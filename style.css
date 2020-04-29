@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400|Poppins:400");
 
+/* General */
+
 html {
   font-size: 100%;
 }
 
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 75%;
+  }
+}
 body {
   background-color: #fafafa;
   font-family: "Poppins", sans-serif;
@@ -18,8 +25,10 @@ img {
   max-width: 600px;
 }
 
-a {
-  color: blue !important;
+@media only screen and (max-width: 750px) {
+  img {
+    max-width: 150vw;
+  }
 }
 
 #again {
@@ -45,6 +54,95 @@ a {
   right: 16px;
   font-size: 32px;
   text-decoration: none;
+}
+@media only screen and (max-width: 750px) {
+  .go-home {
+    font-size: 16px;
+  }
+}
+
+.container {
+  padding: 16px;
+}
+@media only screen and (max-width: 750px) {
+  .container {
+    overflow-x: hidden;
+    padding: 8px;
+  }
+}
+
+.two-thirds {
+  width: 66%;
+}
+@media only screen and (max-width: 750px) {
+  .two-thirds {
+    width: calc(100% - 16px);
+  }
+}
+
+.content {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 5fr 8fr;
+  min-height: calc(100vh - 32px);
+}
+
+@media only screen and (max-width: 750px) {
+  .content {
+    display: initial;
+  }
+}
+
+#sketch-holder {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+  #sketch-holder {
+    min-height: calc(100vh - 16px);
+  }
+}
+
+.spread {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 750px) {
+  .spread {
+    min-height: 80vh;
+    margin-bottom: 64px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.m-0 {
+  margin-top: 0px !important;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.nounderline {
+  text-decoration: none !important;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.inherit-height {
+  height: inherit;
 }
 
 p {
@@ -88,56 +186,6 @@ small,
   font-size: 0.8em;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
-.container {
-  padding: 16px;
-  /* margin: 0 auto; */
-}
-
-.two-thirds {
-  width: 66%;
-}
-
-.content {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 5fr 11fr;
-  min-height: calc(100vh - 32px);
-}
-
-#sketch-holder {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column-reverse;
-}
-
-.spread {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-.nounderline {
-  text-decoration: none !important;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.inherit-height {
-  height: inherit;
+a {
+  color: blue !important;
 }
