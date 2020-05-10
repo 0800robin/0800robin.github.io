@@ -6,11 +6,6 @@ html {
   font-size: 100%;
 }
 
-@media only screen and (max-width: 750px) {
-  html {
-    font-size: 75%;
-  }
-}
 body {
   background-color: #fafafa;
   font-family: "Inter", sans-serif;
@@ -19,6 +14,8 @@ body {
   color: #333;
   font-weight: normal;
   margin: 0px;
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit browsers */
 }
 
 img {
@@ -117,10 +114,20 @@ header {
   max-width: 75%;
 }
 
+#work {
+  margin-top: 48px;
+}
+#contact {
+  display: flex;
+}
+#contact p {
+  margin-right: 12px;
+}
+
 @media only screen and (max-width: 750px) {
   .spread {
-    min-height: 80vh;
-    margin-bottom: 64px;
+    min-height: 66vh;
+    margin-bottom: 16px;
     max-width: 100%;
   }
 }
@@ -132,6 +139,11 @@ header {
 .m-0 {
   margin: 0px !important;
 }
+
+.mt-0 {
+  margin-top: 0px !important;
+}
+
 .mb-0 {
   margin-bottom: 0px !important;
 }
@@ -169,30 +181,29 @@ h5 {
 
 h1 {
   margin-top: 0;
-  font-size: 3.052em;
+  font-size: 11.089em;
 }
 
 h2 {
-  font-size: 2.441em;
+  font-size: 6.854em;
 }
 
 h3 {
-  font-size: 1.953em;
+  font-size: 4.236em;
 }
 
 h4 {
-  font-size: 1.563em;
+  font-size: 2.618em;
 }
 
 h5 {
-  font-size: 1.25em;
+  font-size: 1.618em;
 }
 
 small,
 .text_small {
-  font-size: 0.8em;
+  font-size: 0.618em;
 }
-
 a {
   color: blue !important;
   font-weight: 800;
