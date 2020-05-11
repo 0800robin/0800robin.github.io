@@ -91,7 +91,7 @@ header {
 }
 
 .wrapper {
-  max-width: 1750px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -108,7 +108,7 @@ header {
   align-items: center;
   flex-direction: column-reverse;
   cursor: pointer;
-  min-height: calc(100vh - 16px);
+  min-height: calc(100vh - 32px );
 
 }
 
@@ -119,17 +119,16 @@ header {
 
 #index-work {
   text-align: center;
-  min-height: 80vh;
+  min-height: 66.6vh;
   margin-bottom: 32px;
-  max-width: 100%;
 }
 
 #work {
-  margin-top: 48px;
+  margin-top: 96px;
 }
 #contact {
   display: flex;
-  position: fixed;
+  position: absolute;
   top: 16px;
   right: 16px;
 }
