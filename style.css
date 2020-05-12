@@ -12,7 +12,6 @@ html {
   }
 }
 
-
 body {
   background-color: #fafafa;
   font-family: "Work Sans", sans-serif;
@@ -108,8 +107,7 @@ header {
   align-items: center;
   flex-direction: column-reverse;
   cursor: pointer;
-  min-height: calc(100vh - 32px );
-
+  min-height: calc(100vh - 32px);
 }
 
 @media only screen and (max-width: 750px) {
@@ -128,13 +126,14 @@ header {
 }
 #contact {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 16px;
   right: 16px;
 }
-#contact p {
+
+#contact h5 {
   margin: 0px;
-  margin-left: 12px;
+  margin-left: 12px !important;
 }
 
 .bold {
@@ -168,11 +167,17 @@ header {
 .inherit-height {
   height: inherit;
 }
-p {margin-bottom: 1.15rem;}
+p {
+  margin-bottom: 1.15rem;
+}
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 2.75rem 0 1.05rem;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 400;
   line-height: 1.15;
 }
@@ -181,15 +186,26 @@ h1 {
   font-size: 7.594em;
 }
 
-h2 {font-size: 5.063em;}
+h2 {
+  font-size: 5.063em;
+}
 
-h3 {font-size: 3.375em;}
+h3 {
+  font-size: 3.375em;
+}
 
-h4 {font-size: 2.25em;}
+h4 {
+  font-size: 2.25em;
+}
 
-h5 {font-size: 1.5em;}
+h5 {
+  font-size: 1.5em;
+}
 
-small, .text_small {font-size: 0.667em;}
+small,
+.text_small {
+  font-size: 0.667em;
+}
 a {
   color: blue !important;
   font-weight: 800;
