@@ -107,18 +107,19 @@ header {
 }
 
 @media only screen and (max-width: 750px) {
-  /* #sketch-holder {
-  } */
+  #index-work {
+    width: 100% !important;
+  }
 }
 
 #index-work {
-  text-align: center;
   min-height: 66.6vh;
   margin-bottom: 32px;
+  width: 66%;
 }
 
 #work {
-  margin-top: 96px;
+  margin-top: 32px;
 }
 #contact {
   display: flex;
