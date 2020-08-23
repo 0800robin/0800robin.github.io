@@ -6,6 +6,14 @@ html {
   font-size: 100%;
 }
 
+.center {
+  text-align: center;
+}
+
+img {
+  max-height: 500px;
+  margin: 0 auto;
+}
 
 body {
   background-color: #fafafa;
@@ -17,10 +25,6 @@ body {
   margin: 0px;
   -moz-user-select: none; /* mozilla browsers */
   -khtml-user-select: none; /* webkit browsers */
-}
-
-img {
-  width: 100%;
 }
 
 @media only screen and (max-width: 750px) {
@@ -48,7 +52,7 @@ img {
 }
 
 header {
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 }
 
 .go-home {
@@ -74,6 +78,7 @@ header {
 
 .two-thirds {
   width: 66%;
+  max-width: 1080px;
 }
 @media only screen and (max-width: 750px) {
   .two-thirds {
@@ -103,7 +108,7 @@ header {
   align-items: center;
   flex-direction: column-reverse;
   cursor: pointer;
-  min-height: calc(100vh - 32px);
+  min-height: calc(75vh - 32px);
 }
 
 @media only screen and (max-width: 750px) {
@@ -113,8 +118,6 @@ header {
 }
 
 #index-work {
-  min-height: 66.6vh;
-  margin-bottom: 32px;
   width: 66%;
 }
 

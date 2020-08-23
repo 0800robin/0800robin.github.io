@@ -18,10 +18,10 @@
       gtag("config", "UA-60274083-1");
     </script>
 
-    <script
+    <!-- <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"
-    ></script>
+    ></script> -->
     <title>Robin Hunter</title>
   </head>
 
@@ -46,16 +46,21 @@
             anywhere in the world, all through your browser. 
           </h4>
           <h4 class="mb-0">
-            <a href="/acat.html">ACAT 2.0</a> A novel circular keyboard design and eye-tracking interface allowing
-            MND patients to continue communicating.
-            <span
-              ><a
+            <a href="/acat.html">Peter 2.0</a> Enabling MND superhero Dr Peter Scott-Morgan to continue communicating as the Human Cyborg through a spherical eye-controlled keyboard.
+            <br/>
+            <span><a
                 href="https://www.dandad.org/awards/professional/2020/231847/verbal-spontaneity-personality-retention/?linkId=100000013030443"
                 target="_blank"
                 style="color: black !important"
-                >D&AD 2020 Shortlist ↗
-              </a></span
-            >
+                >D&AD 2020 ↗
+              </a></span>
+              &nbsp; 
+              <span><a
+                href="https://www.channel4.com/programmes/peter-the-human-cyborg"
+                target="_blank"
+                style="color: black !important"
+                >Channel 4 Documentary ↗
+              </a></span>
           </h4>
           <h4 class="mb-0">
             <a href="/dataswarm.html">DataSwarm</a> Visualising 500 conference
@@ -68,59 +73,56 @@
           </h4>
         </div>
       </div>
-      <div id="sketch-holder" onclick="again()">
-        <!-- Our sketch will go here! -->
-      </div>
     </div>
     <script>
-      let life = 10;
-      const DIRECTION = 0.5;
+      // let life = 10;
+      // const DIRECTION = 0.5;
 
-      const OPACITY = 255;
-      const FRAME_RATE = 5;
-      let WIDTH = document.getElementById("sketch-holder").offsetWidth;
-      let HEIGHT = document.getElementById("sketch-holder").offsetHeight;
-      const LINE_SIZE = 12;
+      // const OPACITY = 255;
+      // const FRAME_RATE = 5;
+      // let WIDTH = document.getElementById("sketch-holder").offsetWidth;
+      // let HEIGHT = document.getElementById("sketch-holder").offsetHeight;
+      // const LINE_SIZE = 12;
 
-      function again() {
-        life = life - life / 4;
-        redraw();
-      }
+      // function again() {
+      //   life = life - life / 4;
+      //   redraw();
+      // }
 
-      function windowResized() {
-        resizeCanvas(
-          document.getElementById("sketch-holder").offsetWidth,
-          document.getElementById("sketch-holder").offsetHeight
-        );
-      }
+      // function windowResized() {
+      //   resizeCanvas(
+      //     document.getElementById("sketch-holder").offsetWidth,
+      //     document.getElementById("sketch-holder").offsetHeight
+      //   );
+      // }
 
-      function setup() {
-        var canvas = createCanvas(WIDTH, HEIGHT);
-        canvas.parent("sketch-holder");
-        noLoop();
-      }
+      // function setup() {
+      //   var canvas = createCanvas(WIDTH, HEIGHT);
+      //   canvas.parent("sketch-holder");
+      //   noLoop();
+      // }
 
-      function draw() {
-        console.log("chance of line", life / 10);
-        let count = 0;
-        background(250, OPACITY);
-        smooth();
-        for (var x = 0; x < WIDTH; x += LINE_SIZE) {
-          for (var y = 0; y < HEIGHT; y += LINE_SIZE) {
-            if (Math.random() < life / 10) {
-              count++;
-              if (Math.random() < DIRECTION) {
-                line(x, y, x + LINE_SIZE, y + LINE_SIZE);
-              } else {
-                line(x + LINE_SIZE, y, x, y + LINE_SIZE);
-              }
-            }
-          }
-        }
-        if (count == 0) {
-          console.log("at ", life, " no lines were drawn");
-        }
-      }
+      // function draw() {
+      //   console.log("chance of line", life / 10);
+      //   let count = 0;
+      //   background(250, OPACITY);
+      //   smooth();
+      //   for (var x = 0; x < WIDTH; x += LINE_SIZE) {
+      //     for (var y = 0; y < HEIGHT; y += LINE_SIZE) {
+      //       if (Math.random() < life / 10) {
+      //         count++;
+      //         if (Math.random() < DIRECTION) {
+      //           line(x, y, x + LINE_SIZE, y + LINE_SIZE);
+      //         } else {
+      //           line(x + LINE_SIZE, y, x, y + LINE_SIZE);
+      //         }
+      //       }
+      //     }
+      //   }
+      //   if (count == 0) {
+      //     console.log("at ", life, " no lines were drawn");
+      //   }
+      // }
     </script>
   </body>
 </html>
