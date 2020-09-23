@@ -1,62 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;800;900&display=swap");
-
-/* General */
-
-html {
-  font-size: 100%;
-}
-
-.center {
-  text-align: center;
-}
-
-img {
-  max-height: 500px;
-  margin: 0 auto;
-}
-
-body {
-  background-color: #fafafa;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 400;
-  line-height: 1.65;
-  color: #333;
-  font-weight: normal;
-  margin: 0px;
-  -moz-user-select: none; /* mozilla browsers */
-  -khtml-user-select: none; /* webkit browsers */
-}
-
-@media only screen and (max-width: 750px) {
-  img {
-    max-width: 150vw;
-  }
-}
-
-#again {
-  background: white;
-  border-radius: 8px;
-  color: white;
-  padding: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 32px;
-  margin-top: 32px;
-  cursor: pointer;
-}
-
-#again:focus {
-  outline: none;
-  box-shadow: none;
-}
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;800;900&display=swap");
 
 header {
   margin-bottom: 64px;
 }
 
+.madness {
+  background: blue;
+  padding: 8px;
+  color: white;
+  border-radius: 8px;
+}
+
+.madness a {
+  color: white !important;
+}
+
 .go-home {
-  font-size: 24px;
+  font-size: 32px;
   text-decoration: none;
   position: fixed;
 }
@@ -77,8 +37,8 @@ header {
 }
 
 .two-thirds {
-  width: 66%;
-  max-width: 1080px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 750px) {
   .two-thirds {
@@ -86,55 +46,24 @@ header {
   }
 }
 
-.content {
-  min-height: calc(100vh - 32px);
+
+.center {
+  text-align: center;
 }
 
-.wrapper {
-  max-width: 1080px;
+img {
+  max-height: 500px;
   margin: 0 auto;
 }
 
 @media only screen and (max-width: 750px) {
-  .content {
-    display: initial;
+  img {
+    max-width: 150vw;
   }
 }
 
-#sketch-holder {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column-reverse;
-  cursor: pointer;
-  min-height: calc(75vh - 32px);
-}
 
-@media only screen and (max-width: 750px) {
-  #index-work {
-    width: 100% !important;
-  }
-}
 
-#index-work {
-  width: 66%;
-}
-
-#work {
-  margin-top: 32px;
-}
-#contact {
-  display: flex;
-  position: fixed;
-  top: 16px;
-  right: 16px;
-}
-
-#contact h5 {
-  margin: 0px;
-  margin-left: 12px !important;
-}
 
 .bold {
   font-weight: 900;
@@ -167,46 +96,96 @@ header {
 .inherit-height {
   height: inherit;
 }
-p {
-  margin-bottom: 1.15rem;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 2.75rem 0 1.05rem;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 400;
-  line-height: 1.15;
-}
-
-h1 {
-  font-size: 7.594em;
-}
-
-h2 {
-  font-size: 5.063em;
-}
-
-h3 {
-  font-size: 3.375em;
-}
-
-h4 {
-  font-size: 2.25em;
-}
-
-h5 {
-  font-size: 1.5em;
-}
-
-small,
-.text_small {
-  font-size: 0.667em;
-}
 a {
   color: blue !important;
   font-weight: 800;
+}
+
+
+body {
+  margin: 0px;
+  font-family: "Varela Round", sans-serif;
+}
+
+#my-info {
+  padding: 8px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#my-info h1 {
+  font-size: 5vw;
+}
+
+#projects-wrapper {
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-gap: 8px;
+  margin: 0 auto;
+  max-width: 1080px;
+  margin-bottom: 64px;
+}
+
+.project {
+  padding: 8px;
+  border-radius: 4px;
+  position: relative;
+  min-height: 500px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.project h1 {
+  text-align: center;
+}
+
+.project .intro {
+  max-width: 375px;
+  margin: 32px auto;
+  text-align: center;
+}
+
+.project .tags {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.tags span {
+  font-size: 8px;
+  background: #303133;
+  color: white;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.image-wrapper {
+  max-width: calc(100% - 16px);
+  margin: 0 auto;
+  height: 375px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+#cool {
+  background: red;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+@media only screen and (max-width: 750px) {
+  .image-wrapper {
+    height: 350px;
+  }
 }

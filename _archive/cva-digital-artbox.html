@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60274083-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-60274083-1");
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  
+  <title>CVA 10 Print</title>
+  <style>
+    input {
+      width: 100%;
+      margin-bottom: 32px;
+    }
+    
+    span {
+      font-size: 16px;
+    }
+    
+    #sketch-container {
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+    }
+    
+    #sketch-controls {
+      padding: 16px;
+      background: white;
+      color: black;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid lightgray;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h6 class="left mt-0">Chester Visual Artbox</h6>
+    </header>
+    <div id="sketch-container">
+      <div id="sketch-holder"></div>
+      <div id="sketch-controls">
+        <p><strong>Chance</strong></p>
+        <span>Probability</span>
+        <input type="range" id="chance" name="chance" min="0.01" value="1" max="1" step="0.01"/>
+        <br />
+        <span>Direction<input type="range" id="control" name="control" min="0" value="0.5" max="1" step="0.01"/></span>
+        <br />
+        <span>Chaos<input type="range" id="chaos" name="chaos" min="0" value="0" max="8" step="0.05"/></span>
+        <br>
+        <hr>
+        <p><strong>Control</strong></p>
+        <span>Length<input type="range" id="line" name="line" min="10" value="32" max="64" step="1"/></span>
+        <br />
+        <span>Weight<input type="range" id="lineWeight" name="lineWeight" min="1" value="6" max="18" step="0.5"/></span>
+        <br />
+        <hr>
+        <span>Colours</span>
+        <div id="backgroundColor">
+
+        </div>
+        <br />
+        <button id="save">Save As Image</button>
+      </div>
+    </div>
+
+    <div>
+      <h4>10 Print</h4>
+      <p>10 Print is a classic one-line computer program which creates art</p>
+
+
+      <h4>Chance & Control</h4>
+      <p></p>
+
+      <h4>About this work</h4>
+      <p>This is a little corner of cyberspace which lets people of all technical abilities produce art and see the 
+        result on the computer. In this artwork, the computer is both medium of creation and display & re-appropriates 
+        the core languages of the web (HTML/CSS/JS) to serve artistic ends in a fun and playful way.</p>
+    </div>
+    
+    <footer>
+      <p>Made with ❤️ by <a href="https://futurerob.in/" target="_blank">Robin</a>, in Chester, United Kingdom</p>
+      <p>Download The Code</p>
+    </footer>
+  </div>
+  <script>
+    let CHANCE = 1;
+    let CONTROL = 0.5;
+    let WIDTH = document.getElementById("sketch-holder").offsetWidth;
+    let HEIGHT = document.getElementById("sketch-holder").offsetHeight;
+    let LINE_SIZE = 32;
+    let lineWeight = 6;
+    let chaos = 0;
+
+    let backgroundColourPicker;
+    let lineColourPicker;
+
+    
+    let onSliderChange = function (event) {
+      switch (event.target.name) {
+        case "chance":
+        console.log("chance", event.target.value);
+        CHANCE = event.target.value;
+        break;
+        case "control":
+        console.log("control", event.target.value);
+        CONTROL = 1 - event.target.value;
+        break;
+        case "line":
+        console.log("line", event.target.value);
+        LINE_SIZE = parseInt(event.target.value);
+        break;
+        case "lineWeight":
+        console.log("lineWeight", event.target.value);
+        lineWeight = parseInt(event.target.value);
+        break;
+        case "chaos":
+        console.log("chaos", event.target.value);
+        chaos = parseInt(event.target.value);
+        break;
+        default:
+        break;
+      }
+      
+      redraw();
+    };
+    
+    document.getElementById("chance").addEventListener("input", onSliderChange);
+    document.getElementById("control").addEventListener("input", onSliderChange);
+    document.getElementById("line").addEventListener("input", onSliderChange);
+    document.getElementById("lineWeight").addEventListener("input", onSliderChange);
+    document.getElementById("chaos").addEventListener("input", onSliderChange);
+    document.getElementById("save").addEventListener("click", saveSketch);
+    
+    function saveSketch() {
+      var canvas = document.getElementById("defaultCanvas0");
+      var img = canvas.toDataURL("image/png");
+      var link = document.createElement("a");
+      link.id = "id";
+      link.download = "10_print_sketch";
+      link.href = img;
+      link.click();
+    }
+    
+    function windowResized() {
+      resizeCanvas(
+      document.getElementById("sketch-holder").offsetWidth,
+      document.getElementById("sketch-holder").offsetHeight
+      );
+    }
+    
+    function setup() {
+      var canvas = createCanvas(WIDTH, HEIGHT);
+      canvas.parent("sketch-holder");
+      backgroundColourPicker = createColorPicker('#007AB1');
+      backgroundColourPicker.parent('#backgroundColor');
+
+      lineColourPicker = createColorPicker('#ffffff');
+      lineColourPicker.parent('#backgroundColor');
+
+      noLoop();
+    }
+
+    function generatechaos() {
+      return chaos - ((chaos * 2) * Math.random());
+    }
+    
+    function draw() {
+      background(backgroundColourPicker.color());
+      stroke(lineColourPicker.color());
+      smooth();
+      for (var x = 0; x < WIDTH; x += LINE_SIZE) {
+        for (var y = 0; y < HEIGHT; y += LINE_SIZE) {
+          strokeWeight(lineWeight);
+          if (Math.random() < CHANCE) {
+            if (Math.random() < CONTROL) {
+              line(
+                x + generatechaos(), 
+                y + generatechaos(), 
+                x + generatechaos() + LINE_SIZE, 
+                y + generatechaos() + LINE_SIZE);
+            } else {
+              line(
+                x + generatechaos() + LINE_SIZE, 
+                y + generatechaos(), 
+                x + generatechaos(), 
+                y + generatechaos() + LINE_SIZE);
+            }
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
