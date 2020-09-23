@@ -198,15 +198,12 @@ body {
     font-size: 10vw;
   }
 
-
-  
-  
-
   .project .intro {
     max-width: 100%;
     margin: 8px;
   }
   .project {
     padding: 2px;
+    margin-bottom: 32px;
   }
 }
