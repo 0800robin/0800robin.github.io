@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round:wght@400;800;900&display=swap");
 
+
+body {
+  margin: 0px;
+  font-family: "Varela Round", sans-serif;
+}
+
 header {
   position: fixed;
   background: whitesmoke;
@@ -7,7 +13,7 @@ header {
 }
 
 .head-content {
-  max-width: 800px;
+  max-width: 1080px;
   margin: 0 auto;
   
   display: flex;
@@ -17,19 +23,9 @@ header {
   padding: 0px 8px;
 }
 
-.writeup-container {
-  padding-top: 64px;
-  max-width: 800px;
-  margin: 0 auto;
-}
 
 
-@media only screen and (max-width: 750px) {
-  .writeup-container  {
-    width: calc(100% - 16px);
-  }
-}
-
+/** Article **/
 .madness {
   background: blue;
   padding: 8px;
@@ -45,6 +41,14 @@ header {
   margin-bottom: 64px;
 }
 
+.writeup-container {
+  font-size: 22px;
+  padding-top: 64px;
+  max-width: 1080px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+}
+
 .pic-info {
   text-align: right;
   margin-top: 0px;
@@ -55,25 +59,20 @@ header {
   max-height: unset;
 }
 
+
 @media only screen and (max-width: 750px) {
-  .go-home {
-    font-size: 16px;
+  .writeup-container  {
+    width: calc(100% - 16px);
+  }
+
+  .head-content .name {
+    display: none;
   }
 }
 
-.container {
-  padding: 16px;
-}
-@media only screen and (max-width: 750px) {
-  .container {
-    overflow-x: hidden;
-    padding: 8px;
-  }
-}
 
-.center {
-  text-align: center;
-}
+
+
 
 img {
   max-height: 500px;
@@ -86,6 +85,11 @@ img {
     max-width: 150vw;
   }
 }
+
+.center {
+  text-align: center;
+}
+
 
 .bold {
   font-weight: 900;
@@ -124,20 +128,16 @@ a {
   font-weight: 800;
 }
 
-body {
-  margin: 0px;
-  font-family: "Varela Round", sans-serif;
-}
 
 #my-info {
   padding: 8px;
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
 
 #my-info h1 {
-  font-size: 6vw;
+  font-size: 4vw;
 }
 
 #projects-wrapper {
@@ -146,7 +146,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   grid-gap: 16px;
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 1280px;
   margin-bottom: 64px;
 }
 
@@ -197,18 +197,6 @@ body {
   align-items: center;
   font-size: 64px;
   background-color: lightskyblue;
-}
-
-#cool {
-  background: red;
-}
-
-.mb-0 {
-  margin-bottom: 0px;
-}
-
-.m-0 {
-  margin: 0px;
 }
 
 @media only screen and (max-width: 750px) {
