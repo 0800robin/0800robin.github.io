@@ -47,6 +47,8 @@ header {
   max-width: 1080px;
   margin: 0 auto;
   margin-bottom: 120px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .pic-info {
@@ -61,6 +63,12 @@ header {
 
 
 @media only screen and (max-width: 750px) {
+
+  .force-max {
+    width: 100%;
+  }
+
+  
   .writeup-container  {
     width: calc(100% - 16px);
   }
@@ -134,6 +142,11 @@ a {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 #my-info h1 {
@@ -152,19 +165,38 @@ a {
 
 .project {
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 2px solid lightgray;
   position: relative;
   min-height: 500px;
   background: #f9f9f9;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.project h1 {
+.project-header {
+  padding: 12px;
   text-align: center;
 }
 
+.project-body {
+  padding: 12px;
+  border-top: 2px solid lightgray;
+  border-bottom: 2px solid lightgray;
+}
+
+.project-footer {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .project .intro {
-  max-width: 375px;
+  max-width: 400px;
   margin: 32px auto;
   text-align: center;
 }
@@ -182,7 +214,6 @@ a {
 }
 
 .image-wrapper {
-  max-width: calc(100% - 16px);
   margin: 0 auto;
   height: 375px;
   width: 100%;
