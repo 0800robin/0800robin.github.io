@@ -177,32 +177,16 @@ a {
 
 .project-header {
   padding: 12px;
-  text-align: center;
+  text-align: left;
+  flex: 1;
 }
 
 .project-body {
-  padding: 12px;
-  border-top: 2px solid lightgray;
-  border-bottom: 2px solid lightgray;
-}
-
-.project-footer {
-  flex: 1;
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.project .intro {
-  max-width: 400px;
-  margin: 32px auto;
-  text-align: center;
+  margin-top: 16px;
 }
 
 .project .tags {
-  margin: 12px 0px;
+  margin-bottom: 12px;
 }
 
 .tags span {
@@ -219,7 +203,7 @@ a {
   width: 100%;
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .soon {
@@ -246,12 +230,7 @@ a {
     font-size: 12vw;
   }
 
-  .project .intro {
-    max-width: 100%;
-    margin: 8px;
-  }
   .project {
-    padding: 2px;
-    margin-bottom: 32px;
+    margin-bottom: 8px;
   }
 }
