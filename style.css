@@ -149,6 +149,10 @@ a {
   align-items: center;
 }
 
+.external {
+  text-align: center;
+}
+
 #my-info h1 {
   font-size: 4vw;
 }
