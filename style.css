@@ -142,7 +142,7 @@ a {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  min-height: 75vh;
+  min-height: 40vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -154,7 +154,15 @@ a {
 }
 
 #my-info h1 {
-  font-size: 4vw;
+  font-size: 6vw;
+}
+
+#upcoming-wrapper {
+  padding: 8px;
+  margin: 0 auto;
+  max-width: 640px;
+  margin-bottom: 64px;
+  min-height: unset;
 }
 
 #projects-wrapper {
@@ -228,6 +236,10 @@ a {
   #projects-wrapper {
     display: flex;
     flex-direction: column;
+  }
+
+  #upcoming-wrapper {
+    margin: 8px;
   }
 
   #my-info h1 {
