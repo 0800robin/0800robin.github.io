@@ -10,6 +10,7 @@ header {
   position: fixed;
   background: whitesmoke;
   width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
 }
 
 .head-content {
@@ -23,7 +24,15 @@ header {
   padding: 0px 8px;
 }
 
+button {
+  cursor: pointer;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+  transition: ease-in 0.1s box-shadow;
+}
 
+button:hover {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
+}
 
 /** Article **/
 .madness {
@@ -86,6 +95,8 @@ img {
   max-height: 500px;
   margin: 0 auto;
   max-width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
+  border-radius: 8px;
 }
 
 @media only screen and (max-width: 750px) {
@@ -154,13 +165,13 @@ a {
 }
 
 #my-info h1 {
-  font-size: 6vw;
+  font-size: 7vw;
 }
 
 #upcoming-wrapper {
-  padding: 8px;
+  padding: 16px;
   margin: 0 auto;
-  max-width: 640px;
+  max-width: 720px;
   margin-bottom: 64px;
   min-height: unset;
 }
@@ -168,37 +179,40 @@ a {
 #projects-wrapper {
   padding: 8px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
   grid-gap: 16px;
   margin: 0 auto;
   max-width: 1280px;
   margin-bottom: 64px;
 }
 
-.project {
-  padding: 8px;
+.project-card {
   border-radius: 8px;
-  border: 2px solid lightgray;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20);
   position: relative;
   min-height: 500px;
   background: #f9f9f9;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
 }
 
-.project-header {
-  padding: 12px;
-  text-align: left;
-  flex: 1;
+.project-card__image {
+  padding: 8px;
 }
 
-.project-body {
-  margin-top: 16px;
+.project-card__body {
+  padding: 16px;
+}
+.project-card__footer {
+  padding: 16px;
+  text-align: right;
 }
 
-.project .tags {
-  margin-bottom: 12px;
+.project-card__ongoing {
+  padding: 16px;
+height: calc(100% - 32px);
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
 }
 
 .tags span {
@@ -215,7 +229,8 @@ a {
   width: 100%;
   background-size: cover;
   background-position: center;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
 }
 
 .soon {
@@ -250,3 +265,4 @@ a {
     margin-bottom: 8px;
   }
 }
+
