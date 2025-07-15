@@ -3,9 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robin Hunter</title>
+    <title>Robin Hunter - Creative Technologist</title>
+    <meta property="og:title" content="Robin Hunter - Creative Technologist">
+    <meta property="og:description" content="Robin Hunter's portfolio website full of cool projects.">
+    <meta property="og:url" content="https://futurerob.in">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Robin Hunter">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #f8f8f8;
+            color: #111;
+        }
+        /* Custom style for the project link hover effect */
+        .project-link-item:hover .project-title {
+            text-decoration: line-through;
+            cursor: pointer;
+        }
+        /* Page transition styles */
+        body.fade-out {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+        }
+        /* Ensure the image container for stacking has a consistent size */
+        #image-container {
+            aspect-ratio: 4 / 5;
+        }
+    </style>
 </head>
-<body>
-    Test
+<body class="antialiased">
+
+    <div id="app-container" class="p-6 md:p-10">
+        <!-- Page content will be injected here by JavaScript -->
+    </div>
+
+    <!-- Template for the main page -->
+    <template id="home-page-template">
+        <div class="max-w-7xl mx-auto">
+            <header class="relative mb-20 md:mb-32">
+                <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Robin Hunter</h1>
+                <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
+                    I'm Creative Technologist with 10 years experience working in interdisciplinary teams building novel experiences with emerging tech. I strive to know the user, know the magic and connect the two.
+                </p>
+                <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
+                    I'm currently the Lead Creative Technologist at Burberry, leading the charge on using the latest technologies to create elevated experiences for a 175 year old luxury brand.
+                </p>
+
+                <div class="text-base text-gray-600 max-w-2xl mt-8">
+                    <p>Interested in collaborating or have a question? Feel free to reach out.</p>
+                    <p class="mt-2">
+                        <a href="mailto:robin.h.94@gmail.com" class="underline hover:text-black">robin.h.94@gmail.com</a>
+                        <span class="mx-2">&bull;</span>
+                        <a href="https://www.linkedin.com/in/futurerobin/" target="_blank" class="underline hover:text-black">LinkedIn</a>
+                    </p>
+                 </div>
+            </header>
+
+            <main class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-24">
+                <div id="project-list">
+                    <!-- Projects will be dynamically inserted here -->
+                </div>
+                <div class="hidden lg:block">
+                    <div id="image-viewer" class="sticky top-10">
+                        <div id="image-container" class="w-full relative">
+                            <!-- Images will appear and stack here -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+    </template>
+
+    <script>
+        // --- DATA ---
+        const projects = [
+            {
+                id: 'burberry-harrods-photobooth',
+                title: 'Burberry Harrods Takeover',
+                category: 'AI Photo Booth + Roblox World',
+                image: 'https://www.burberryplc.com/news/brand/2024/burberry-launches-harrods-takeover-on-roblox/_jcr_content/root/responsivegrid/banner/image.coreimg.100.1280.jpeg/1709847771771/exterior-16x9.jpeg',
+            },
+            {
+                id: 'burberry-virtual-scarf-try-on',
+                title: 'Burberry Virtual Scarf Try On',
+                category: 'AI virutal try on',
+                image: 'https://www.burberryplc.com/news/brand/2024/burberry-builds-on-legacy-of-digital-innovation-with-virtual-sca/_jcr_content/root/responsivegrid/container/container/image.coreimg.100.1280.jpeg/1730994784794/keoghan.jpeg',
+            },
+            {
+                id: 'peter',
+                title: 'Peter 2.0 - Human Cyborg',
+                category: 'Redesigning Stephen Hawkings assistive tech for the 21st century',
+                image: 'https://futurerob.in/img/ocean/peter.png',
+            },
+            {
+                id: 'goddess-ar',
+                title: 'Goddess Fragrance Launch',
+                category: 'WebAR Experience',
+                image: 'https://futurerob.in/img/ocean/goddess.png',
+            },
+            {
+                id: 'ocean-music-app',
+                title: 'OCEAN - Music Making App',
+                category: 'Independent Project',
+                image: 'https://futurerob.in/img/ocean/main.png',
+            }
+        ];
+        
+        // --- RENDERING ---
+        const appContainer = document.getElementById('app-container');
+        
+        let zCounter = 1;
+        let rotationAccumulator = 0;
+
+        const renderHomePage = () => {
+            const template = document.getElementById('home-page-template');
+            const clone = template.content.cloneNode(true);
+            appContainer.appendChild(clone);
+
+            const projectList = document.getElementById('project-list');
+            const imageContainer = document.getElementById('image-container');
+            zCounter = 1; 
+            rotationAccumulator = -4; 
+            
+            projects.forEach((project, index) => {
+                const projectItem = document.createElement('div');
+                projectItem.className = 'project-link-item block p-2 -ml-2 mb-2 cursor-default';
+                projectItem.dataset.projectId = project.id;
+                
+                projectItem.innerHTML = `
+                    <span class="project-title font-medium text-2xl md:text-3xl">${project.title}</span>
+                    <span class="block text-gray-500 text-sm mt-1">${project.category}</span>
+                `;
+                projectList.appendChild(projectItem);
+
+                const img = document.createElement('img');
+                img.src = project.image;
+                img.alt = project.title;
+                
+                const initialRotation = rotationAccumulator + (Math.random() * 2 - 1);
+                img.style.transform = `rotate(${initialRotation}deg) scale(0.95)`;
+                img.dataset.rotation = initialRotation;
+                
+                img.className = `absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 ease-in-out rounded-lg shadow-xl opacity-0`;
+                img.dataset.imgId = project.id;
+                img.onerror = function() {
+                    this.onerror=null;
+                    this.src='https://placehold.co/800x1000/e2e8f0/a0aec0?text=Image+Not+Found';
+                };
+                imageContainer.appendChild(img);
+
+                rotationAccumulator += 3;
+            });
+            
+            setupHomePageEventListeners();
+        };
+        
+        // --- EVENT LISTENERS ---
+        function setupHomePageEventListeners() {
+            const links = document.querySelectorAll('.project-link-item');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    const projectId = link.dataset.projectId;
+                    const img = document.querySelector(`img[data-img-id='${projectId}']`);
+                    
+                    if (img) {
+                        img.style.opacity = '1';
+                        const rotation = img.dataset.rotation;
+                        img.style.transform = `rotate(${rotation}deg) scale(1)`;
+                        img.style.zIndex = zCounter;
+                        zCounter++;
+                    }
+                });
+            });
+        }
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', renderHomePage);
+
+    </script>
 </body>
 </html>
