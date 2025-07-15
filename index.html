@@ -84,7 +84,7 @@
         // --- DATA ---
         const projects = [
             {
-                id: 'burberry-harrods-photobooth',
+                id: 'burberry-harrods-takeover',
                 title: 'Burberry Harrods Takeover',
                 category: 'AI Photo Booth + Roblox World',
                 image: 'https://www.burberryplc.com/news/brand/2024/burberry-launches-harrods-takeover-on-roblox/_jcr_content/root/responsivegrid/banner/image.coreimg.100.1280.jpeg/1709847771771/exterior-16x9.jpeg',
@@ -102,13 +102,13 @@
                 image: 'https://futurerob.in/img/peter.jpg',
             },
             {
-                id: 'goddess-ar',
-                title: 'Goddess Fragrance Launch',
+                id: 'burberry-goddess-ar',
+                title: 'Burberry Goddess AR campaign',
                 category: 'WebAR Experience',
                 image: 'https://futurerob.in/img/goddess.png',
             },
             {
-                id: 'ocean-music-app',
+                id: 'ocean',
                 title: 'OCEAN - Music Making App',
                 category: 'Collaborative web music platform with 30,000+ users',
                 image: 'https://futurerob.in/img/ocean.png',
@@ -140,6 +140,12 @@
                     <span class="project-title font-medium text-2xl md:text-3xl">${project.title}</span>
                     <span class="block text-gray-500 text-sm mt-1">${project.category}</span>
                 `;
+
+                projectItem.addEventListener('click', () => {
+                    window.location.href = `${project.id}.html`;
+                });
+
+
                 projectList.appendChild(projectItem);
 
                 const img = document.createElement('img');
