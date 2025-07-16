@@ -26,7 +26,7 @@
   </head>
 
   <body class="antialiased">
-    <div class="max-w-7xl mt-8 mx-auto">
+    <div class="max-w-7xl mt-8 mx-auto pt-0 p-6 md:p-10">
       <header class="relative md:mb-8">
         <a href="index.html#project-list" class="text-gray-600 hover:text-black"
           >Back to Home</a
@@ -50,9 +50,11 @@
         </div>
       </div>
 
-      <div class="max-w-3xl mb-8 player-container" id="waveform">
-        <button id="play" class="bg-">Play</button>
-      </div>
+      <div class="max-w-md my-8 player-container" id="waveform">
+        <button id="play" class="text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300  gap-3">
+            <span class="w-100 text-center">Play project voice memo</span>
+        </button>
+    </div>
 
       <main class="max-w-3xl">
         <p class="mb-4">
@@ -107,8 +109,6 @@
 
     document.getElementById("play").addEventListener("click", (e) => {
       const isPlaying = wavesurfer.isPlaying();
-
-      console.log(e);
 
       if (isPlaying) {
         wavesurfer.pause();
