@@ -25,9 +25,13 @@
             color: #111;
         }
 
+        .project-title {
+            color: #000f9f;
+            text-decoration: underline;
+        }
+
         /* Custom style for the project link hover effect */
         .project-link-item:hover .project-title {
-            text-decoration: line-through;
             cursor: pointer;
         }
 
@@ -80,9 +84,8 @@
 
                 <div id="project-list">
                     <p class="text-gray-600 max-w-2xl text-base mb-8">
-                        Public works. A lot of internal projects and prototypes are under NDA.
+                        Public work.
                     </p>
-
                     <!-- Projects will be dynamically inserted here -->
                 </div>
                 <div class="hidden lg:block">
@@ -99,15 +102,15 @@
         // --- DATA ---
         const projects = [
             {
-                id: 'burberry-harrods-takeover',
-                title: 'Burberry Harrods Takeover',
-                category: 'AI Photo Booth + Roblox World',
-                image: 'https://www.burberryplc.com/news/brand/2024/burberry-launches-harrods-takeover-on-roblox/_jcr_content/root/responsivegrid/banner/image.coreimg.100.1280.jpeg/1709847771771/exterior-16x9.jpeg',
+                id: 'burberry-virtual-scarf-try-on',
+                title: 'Burberry Scarf Virtual Try On',
+                category: 'Try on the iconic scarf with AI / AR',
+                image: 'https://www.burberryplc.com/news/brand/2024/burberry-builds-on-legacy-of-digital-innovation-with-virtual-sca/_jcr_content/root/responsivegrid/container/container/image.coreimg.100.1280.jpeg/1730994784794/keoghan.jpeg',
             },
             {
-                id: 'burberry-virtual-scarf-try-on',
-                title: 'Burberry Virtual Scarf Try On',
-                category: 'AI virutal try on',
+                id: 'burberry-archive-ai',
+                title: 'Burberry Animated Archive',
+                category: 'Animating Burberry archive images with AI',
                 image: 'https://www.burberryplc.com/news/brand/2024/burberry-builds-on-legacy-of-digital-innovation-with-virtual-sca/_jcr_content/root/responsivegrid/container/container/image.coreimg.100.1280.jpeg/1730994784794/keoghan.jpeg',
             },
             {
@@ -117,17 +120,23 @@
                 image: 'https://futurerob.in/img/peter.jpg',
             },
             {
-                id: 'burberry-goddess-ar',
-                title: 'Burberry Goddess AR campaign',
-                category: 'WebAR Experience',
+                id: 'burberry-harrods-takeover',
+                title: 'Burberry x Harrods',
+                category: 'AI Photo Booth + Roblox World',
+                image: 'https://www.burberryplc.com/news/brand/2024/burberry-launches-harrods-takeover-on-roblox/_jcr_content/root/responsivegrid/banner/image.coreimg.100.1280.jpeg/1709847771771/exterior-16x9.jpeg',
+            },
+            {
+                id: 'black-owned-friday',
+                title: 'Black Owned Friday',
+                category: 'An infinite, shoppable music video for Google (featuring T-Pain)',
                 image: 'https://futurerob.in/img/goddess.png',
             },
             {
                 id: 'ocean',
-                title: 'OCEAN - Music Making App',
+                title: 'Ocean - Make beats online',
                 category: 'Collaborative web music platform with 30,000+ users',
                 image: 'https://futurerob.in/img/ocean.png',
-            }
+            },
         ];
 
         // --- RENDERING ---
