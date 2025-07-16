@@ -1,53 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Burberry Virtual Scarf Try On</title>
-    <meta property="og:title" content="Burberry Virtual Scarf Try On">
-    <meta property="og:description" content="">
-    <meta property="og:url" content="https://futurerob.in">
-    <meta property="og:type" content="website">
-    <meta name="author" content="Robin Hunter">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <meta property="og:title" content="Burberry Virtual Scarf Try On" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://futurerob.in" />
+    <meta property="og:type" content="website" />
+    <meta name="author" content="Robin Hunter" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="./styles.css" rel="stylesheet"/>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
 
-<body class="antialiased">
-
+  <body class="antialiased">
     <div class="max-w-7xl mt-8 mx-auto pt-0 p-6 md:p-10">
-        <header class="relative  md:mb-32">
-            <a href="index.html#project-list" class="text-gray-600 hover:text-black">Back to Home</a>
-        </header>
+      <header class="relative md:mb-32">
+        <a href="index.html#project-list" class="text-gray-600 hover:text-black"
+          >Back to Home</a
+        >
+      </header>
 
-        <div class="max-w-7xl mt-8 mb-16 mx-auto">
-
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Burberry Virtual Scarf Try On</h1>
-            <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
-                Bringing the Burberry scarf to life in augmented reality.
-            </p>
-            <div class="text-base text-gray-600 max-w-2xl">
-                <p class="mt-2">
-                    <a href="https://uk.burberry.com/c/scarves/virtual-try-on/" target="_blank" class="underline hover:text-black">Try now</a>
-                    <span class="mx-2">&bull;</span>
-                    <a href="https://www.burberryplc.com/news/brand/2024/burberry-builds-on-legacy-of-digital-innovation-with-virtual-sca" target="_blank" class="underline hover:text-black">Press Release</a>
-                </p>
-            </div>
+      <div class="max-w-7xl mt-8 mb-16 mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+          Burberry Virtual Scarf Try On
+        </h1>
+        <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
+          Bringing the Burberry scarf to life in augmented reality.
+        </p>
+        <div class="text-base text-gray-600 max-w-2xl">
+          <p class="mt-2">
+            <a
+              href="https://uk.burberry.com/c/scarves/virtual-try-on/"
+              target="_blank"
+              class="underline hover:text-black"
+              >Try now</a
+            >
+            <span class="mx-2">&bull;</span>
+            <a
+              href="https://www.burberryplc.com/news/brand/2024/burberry-builds-on-legacy-of-digital-innovation-with-virtual-sca"
+              target="_blank"
+              class="underline hover:text-black"
+              >Press Release</a
+            >
+          </p>
         </div>
+      </div>
 
-        <main class="max-w-3xl">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7262411413086769152?collapsed=1" height="771" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-        </main>
+      <div class="max-w-md my-8 player-container" id="waveform">
+        <button
+          id="play"
+          class="text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 gap-3"
+        >
+          <span class="w-100 text-center">Play project voice memo</span>
+        </button>
+      </div>
+
+      <main class="max-w-3xl">
+        <iframe
+          src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7262411413086769152?collapsed=1"
+          height="771"
+          width="504"
+          frameborder="0"
+          allowfullscreen=""
+          title="Embedded post"
+        ></iframe>
+      </main>
     </div>
+  </body>
 
+  <script type="module">
+    import WaveSurfer from "https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js";
 
-</body>
+    const wavesurfer = WaveSurfer.create({
+      container: "#waveform",
+      height: 44,
+      width: "100%",
+      waveColor: "#000f9f",
+      progressColor: "#383351",
+      url: "./audio/scarf.mp3",
+      barWidth: 5,
+      barGap: 2,
+      barRadius: 28,
+      barHeight: 1.2,
+      barAlign: "",
+    });
 
+    document.getElementById("play").addEventListener("click", (e) => {
+      const isPlaying = wavesurfer.isPlaying();
+
+      if (isPlaying) {
+        wavesurfer.pause();
+        e.target.innerHTML = "Play";
+        e.target.innerText = "Play";
+      } else {
+        wavesurfer.play();
+        e.target.innerHTML = "Pause";
+        e.target.innerText = "Pause";
+      }
+    });
+
+    wavesurfer.on("interaction", () => {
+      wavesurfer.play();
+    });
+  </script>
 </html>

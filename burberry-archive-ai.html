@@ -40,6 +40,17 @@
             </div>
         </div>
 
+
+
+      <div class="max-w-md my-8 player-container" id="waveform">
+        <button
+          id="play"
+          class="text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 gap-3"
+        >
+          <span class="w-100 text-center">Play project voice memo</span>
+        </button>
+      </div>
+      
         <main class="max-w-3xl">
             <p>This is the main content of the project. It'll be a few paragraphs long and will include the technologies
                 used. And cool things like that. This is the main content of the project. It'll be a few paragraphs long
@@ -63,5 +74,41 @@
 
 
 </body>
+
+<script type="module">
+    import WaveSurfer from "https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js";
+
+    const wavesurfer = WaveSurfer.create({
+      container: "#waveform",
+      height: 44,
+      width: "100%",
+      waveColor: "#000f9f",
+      progressColor: "#383351",
+      url: "./audio/archive.mp3",
+      barWidth: 5,
+      barGap: 2,
+      barRadius: 28,
+      barHeight: 1.2,
+      barAlign: "",
+    });
+
+    document.getElementById("play").addEventListener("click", (e) => {
+      const isPlaying = wavesurfer.isPlaying();
+
+      if (isPlaying) {
+        wavesurfer.pause();
+        e.target.innerHTML = "Play";
+        e.target.innerText = "Play";
+      } else {
+        wavesurfer.play();
+        e.target.innerHTML = "Pause";
+        e.target.innerText = "Pause";
+      }
+    });
+
+    wavesurfer.on("interaction", () => {
+      wavesurfer.play();
+    });
+  </script>
 
 </html>

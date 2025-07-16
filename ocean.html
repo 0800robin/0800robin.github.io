@@ -21,8 +21,8 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    
-    <link href="./styles.css" rel="stylesheet"/>
+
+    <link href="./styles.css" rel="stylesheet" />
   </head>
 
   <body class="antialiased">
@@ -51,10 +51,13 @@
       </div>
 
       <div class="max-w-md my-8 player-container" id="waveform">
-        <button id="play" class="text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300  gap-3">
-            <span class="w-100 text-center">Play project voice memo</span>
+        <button
+          id="play"
+          class="text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 gap-3"
+        >
+          <span class="w-100 text-center">Play project voice memo</span>
         </button>
-    </div>
+      </div>
 
       <main class="max-w-3xl">
         <p class="mb-4">
@@ -112,12 +115,12 @@
 
       if (isPlaying) {
         wavesurfer.pause();
-        e.target.innerHTML = 'Play';
-        e.target.innerText = 'Play';
+        e.target.innerHTML = "Play";
+        e.target.innerText = "Play";
       } else {
         wavesurfer.play();
-        e.target.innerHTML = 'Pause';
-        e.target.innerText = 'Pause';
+        e.target.innerHTML = "Pause";
+        e.target.innerText = "Pause";
       }
     });
 
