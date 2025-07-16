@@ -1,0 +1,33 @@
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #f5f5ef;
+  color: #111;
+}
+
+.project-title {
+  color: #000f9f;
+  text-decoration: underline;
+}
+
+.project-link-item:hover .project-title {
+  cursor: pointer;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+#image-container {
+  aspect-ratio: 4 / 5;
+}
+
+.player-container {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+#play {
+  margin-top: 24px;
+}
