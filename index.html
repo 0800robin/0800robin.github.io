@@ -1,271 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Robin Hunter - Creative Technologist</title>
-    <meta property="og:title" content="Robin Hunter - Creative Technologist">
-    <meta property="og:description" content="Robin Hunter's portfolio website full of cool projects.">
-    <meta property="og:url" content="https://futurerob.in">
-    <meta property="og:type" content="website">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Robin Hunter">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <meta property="og:title" content="Robin Hunter - Creative Technologist" />
+    <meta
+      property="og:description"
+      content="Robin Hunter's portfolio website full of cool projects."
+    />
+    <meta property="og:url" content="https://futurerob.in" />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Robin Hunter" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: rgb(245, 245, 239);
-        }
-        #work {
-            position: absolute;
-            right: 0;
-        }
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        background: rgb(245, 245, 239);
+      }
+
     </style>
-    <!-- The user's styles.css link was removed as the content was not provided. -->
-</head>
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
 
-<body class="antialiased text-gray-900">
+  <body class="antialiased text-gray-900">
+    <div class="max-w-7xl mx-auto pt-0 p-6 md:p-10">
+      <header class="relative mb-2 md:mb-8">
 
-    <div id="app-container" class="p-6 md:p-10 mb-8">
-        <!-- Page content will be injected here by JavaScript -->
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+          Robin Hunter
+        </h1>
+        <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
+          I'm a Creative Technologist with 10 years experience crafting
+          engaging, interactive experiences with interdisciplinary teams. I
+          strive to know the user, know the techie magic and connect the two.
+        </p>
+        <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
+          At Burberry, I harness emerging technologies to tell the story of our
+          175 year old brand. As part of an internal agency-like team, I lead
+          development of elevated digital marketing campaigns, create
+          next-generation brand interaction prototypes and spearhead a culture
+          of innovation.
+        </p>
+        <div class="text-base text-gray-600 max-w-2xl mt-4">
+          <p>
+            <a
+              href="mailto:robin.h.94@gmail.com"
+              class="underline hover:text-black"
+              >robin.h.94@gmail.com</a
+            >
+            <span class="mx-2">&bull;</span>
+            <a
+              href="https://www.linkedin.com/in/futurerobin/"
+              target="_blank"
+              class="underline hover:text-black"
+              >LinkedIn</a
+            >
+          </p>
+
+          <div class="max-w-md my-8 player-container" id="landing-waveform">
+            <button
+              id="play"
+              class="text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 gap-3"
+            >
+              <span class="w-100 text-center">Play 60 second overview! </span>
+            </button>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div id="app-container" class="max-w-7xl mx-auto pt-0 p-6 md:p-10">
+      <!-- Page content will be injected here by JavaScript -->
     </div>
 
     <template id="home-page-template">
-        <div class="max-w-7xl mx-auto">
-
-         
-            <header class="relative mb-8 md:mb-6">
-                <a href="#project-list" id="work">
-                    <h2 class="text-xl md:text-2xl tracking-tight">Work</h2>
-                </a>
-          
-                <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Robin Hunter</h1>
-                <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
-                    I'm a Creative Technologist with 10 years experience crafting engaging, interactive experiences with interdisciplinary teams. 
-                    I strive to know the user, know the techie magic and connect the two.
-                </p>
-                <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
-                    At Burberry, I harness emerging technologies to tell the story of our 175 year old brand. 
-                    As part of an internal agency-like team, I lead development of elevated digital marketing campaigns, create next-generation brand interaction prototypes and spearhead a culture of innovation.
-                </p>
-                <div class="text-base text-gray-600 max-w-2xl mt-4">
-                    <p>
-                        <a href="mailto:robin.h.94@gmail.com"
-                            class="underline hover:text-black">robin.h.94@gmail.com</a>
-                        <span class="mx-2">&bull;</span>
-                        <a href="https://www.linkedin.com/in/futurerobin/" target="_blank"
-                            class="underline hover:text-black">LinkedIn</a>
-                    </p>
-                </div>
-            </header>
-
-
-                <!-- Video Section -->
-                <section class="mb-20 md:mb-24">
-                    <div class="relative rounded-lg overflow-hidden shadow-xl" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/zpV7radKuwo?si=O0F0U8lMC_4ye2Cv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                  
-                    </div>
-                </section>
-
-            <main class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-24" style="min-height: 75vh;">
-
-                <div id="project-list">
-                    <p class="text-gray-600 max-w-2xl text-base mb-2">
-                        Selected public works
-                    </p>
-                    <!-- Projects will be dynamically inserted here -->
-                </div>
-                <div class="md:hidden lg:block">
-                    <!-- Renamed from image-viewer to media-viewer for clarity -->
-                    <div id="media-viewer" class="sticky h-full">
-                         <!-- Renamed from image-container to media-container -->
-                        <div id="media-container" class="w-full h-full relative">
-                            <!-- Images and Videos will appear and stack here -->
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
+      <div class="max-w-7xl mx-auto">
+        <main
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-24"
+          style="min-height: 70vh"
+        >
+          <div id="project-list">
+            <p class="text-gray-600 max-w-2xl text-base mb-2">
+              Selected public works
+            </p>
+            <!-- Projects will be dynamically inserted here -->
+          </div>
+          <div class="md:hidden lg:block">
+            <!-- Renamed from image-viewer to media-viewer for clarity -->
+            <div id="media-viewer" class="sticky h-full">
+              <!-- Renamed from image-container to media-container -->
+              <div id="media-container" class="w-full h-full relative">
+                <!-- Images and Videos will appear and stack here -->
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </template>
+    <!-- 
+    <section class="max-w-7xl mx-auto mb-20 md:mb-24">
+      <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-2">
+        Video intro
+      </h2>
+      <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl mb-4">
+        Hey look he's real.
+      </p>
+      <div
+        class="relative rounded-lg overflow-hidden shadow-xl"
+        style="padding-top: 56.25%"
+      >
+        <iframe
+          class="absolute top-0 left-0 w-full h-full"
+          src="https://www.youtube.com/embed/zpV7radKuwo?si=O0F0U8lMC_4ye2Cv"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section> -->
 
     <script>
-        // --- DATA ---
-        // Updated data structure to support both images and videos
-        const projects = [
-            {
-                id: 'burberry-virtual-scarf-try-on',
-                title: 'Burberry Scarf Virtual Try On',
-                category: 'Try on the iconic Burberry Scarf using AI / AR',
-                mediaType: 'video', 
-                mediaSrc: './video/scarf-preview.mp4',
-                poster: './img/scarf.png' 
-            },
-            {
-                id: 'burberry-archive-ai',
-                title: 'Burberry Animated Archive',
-                category: 'Bringing the Burberry Archive to life with AI & the 3D web',
-                mediaType: 'video', 
-                mediaSrc: './video/waves.webm', 
-                poster: '', 
-            },
-            {
-                id: 'peter',
-                title: 'Peter 2.0 - Human Cyborg',
-                category: 'Redesigning Stephen Hawkings assistive tech for the 21st century',
-                mediaType: 'image',
-                mediaSrc: './img/peter.jpg',
-                poster: ''
-            },
-            {
-                id: 'burberry-harrods-takeover',
-                title: 'Burberry x Harrods',
-                category: 'An interactive AI photobooth and Roblox world for the 190 year old store',
-                mediaType: 'video',
-                mediaSrc: './video/harrods-intro.mp4',
-                poster: './img/harrods.jpeg'
-            },
-            {
-                id: 'black-owned-friday',
-                title: 'Google Black Owned Friday',
-                category: 'An infinite, shoppable music video (featuring T-Pain)',
-                mediaType: 'video', 
-                mediaSrc: './video/friday.mp4',
-                poster: './img/friday.jpg'
-            },
-            {
-                id: 'ocean',
-                title: 'Ocean - Make beats online',
-                category: 'Collaborative web music platform with 30,000+ users',
-                mediaType: 'image',
-                mediaSrc: './img/ocean.png',
-                poster: ''
-            },
-        ];
+      // --- DATA ---
+      // Updated data structure to support both images and videos
+      const projects = [
+        {
+          id: "burberry-virtual-scarf-try-on",
+          title: "Burberry Scarf Virtual Try On",
+          category: "Try on the iconic Burberry Scarf using AI / AR",
+          mediaType: "video",
+          mediaSrc: "./video/scarf-preview.mp4",
+          poster: "./img/scarf.png",
+        },
+        {
+          id: "burberry-archive-ai",
+          title: "Burberry Animated Archive",
+          category:
+            "Bringing the Burberry Archive to life with AI & the 3D web",
+          mediaType: "video",
+          mediaSrc: "./video/waves.webm",
+          poster: "",
+        },
+        {
+          id: "peter",
+          title: "Peter 2.0 - Human Cyborg",
+          category:
+            "Redesigning Stephen Hawkings assistive tech for the 21st century",
+          mediaType: "image",
+          mediaSrc: "./img/peter.jpg",
+          poster: "",
+        },
+        {
+          id: "burberry-harrods-takeover",
+          title: "Burberry x Harrods",
+          category:
+            "An interactive AI photobooth and Roblox world for the 190 year old store",
+          mediaType: "video",
+          mediaSrc: "./video/harrods-intro.mp4",
+          poster: "./img/harrods.jpeg",
+        },
+        {
+          id: "black-owned-friday",
+          title: "Google Black Owned Friday",
+          category: "An infinite, shoppable music video (featuring T-Pain)",
+          mediaType: "video",
+          mediaSrc: "./video/friday.mp4",
+          poster: "./img/friday.jpg",
+        },
+        {
+          id: "ocean",
+          title: "Ocean - Make beats online",
+          category: "Collaborative web music platform with 30,000+ users",
+          mediaType: "image",
+          mediaSrc: "./img/ocean.png",
+          poster: "",
+        },
+      ];
 
-        // --- RENDERING ---
-        const appContainer = document.getElementById('app-container');
+      // --- RENDERING ---
+      const appContainer = document.getElementById("app-container");
 
-        let zCounter = 1;
-        let rotationAccumulator = 0;
+      let zCounter = 1;
+      let rotationAccumulator = 0;
 
-        const renderHomePage = () => {
-            const template = document.getElementById('home-page-template');
-            const clone = template.content.cloneNode(true);
-            appContainer.appendChild(clone);
+      const renderHomePage = () => {
+        const template = document.getElementById("home-page-template");
+        const clone = template.content.cloneNode(true);
+        appContainer.appendChild(clone);
 
-            const projectList = document.getElementById('project-list');
-            // Updated to select the renamed media-container
-            const mediaContainer = document.getElementById('media-container');
-            zCounter = 1;
-            rotationAccumulator = -4; // Initial rotation angle
+        const projectList = document.getElementById("project-list");
+        // Updated to select the renamed media-container
+        const mediaContainer = document.getElementById("media-container");
+        zCounter = 1;
+        rotationAccumulator = -4; // Initial rotation angle
 
-            projects.forEach((project) => {
-                // Create the project link item
-                const projectItem = document.createElement('div');
-                projectItem.className = 'project-link-item block p-2 -ml-2 mb-2 cursor-pointer hover:bg-gray-100 rounded-md transition-colors';
-                projectItem.dataset.projectId = project.id;
+        projects.forEach((project, i) => {
+          // Create the project link item
+          const projectItem = document.createElement("div");
+          projectItem.className =
+            "project-link-item block p-2 -ml-2 mb-2 cursor-pointer hover:bg-gray-100 rounded-md transition-colors";
+          projectItem.dataset.projectId = project.id;
 
-                projectItem.innerHTML = `
+          projectItem.innerHTML = `
                     <span class="project-title font-medium text-2xl md:text-3xl">${project.title}</span>
                     <span class="block text-gray-500 text-sm mt-1">${project.category}</span>
                 `;
 
-                projectItem.addEventListener('click', () => {
-                    // This assumes you have corresponding HTML files for each project
-                    window.location.href = `${project.id}.html`;
-                });
+          projectItem.addEventListener("click", () => {
+            // This assumes you have corresponding HTML files for each project
+            window.location.href = `${project.id}.html`;
+          });
 
-                projectList.appendChild(projectItem);
+          projectList.appendChild(projectItem);
 
-                // --- Media Element Creation (Image or Video) ---
-                let mediaElement;
-                if (project.mediaType === 'video') {
-                    // Create a video element
-                    mediaElement = document.createElement('video');
-                    mediaElement.src = project.mediaSrc;
-                    mediaElement.poster = project.poster;
-                    mediaElement.loop = true;
-                    mediaElement.muted = true; // Essential for autoplay in most browsers
-                    mediaElement.playsInline = true; // Essential for iOS
-                    mediaElement.preload = 'metadata'; // Helps with faster loading
-                } else {
-                    // Create an image element (the original behavior)
-                    mediaElement = document.createElement('img');
-                    mediaElement.src = project.mediaSrc;
-                    mediaElement.alt = project.title;
-                    mediaElement.onerror = function () {
-                        this.onerror = null;
-                        this.src = 'https://placehold.co/800x1000/e2e8f0/a0aec0?text=Image+Not+Found';
-                    };
-                }
+          // --- Media Element Creation (Image or Video) ---
+          let mediaElement;
+          if (project.mediaType === "video") {
+            // Create a video element
+            mediaElement = document.createElement("video");
+            mediaElement.src = project.mediaSrc;
+            mediaElement.poster = project.poster;
+            mediaElement.loop = true;
+            mediaElement.muted = true; // Essential for autoplay in most browsers
+            mediaElement.playsInline = true; // Essential for iOS
+            mediaElement.preload = "metadata"; // Helps with faster loading
+          } else {
+            // Create an image element (the original behavior)
+            mediaElement = document.createElement("img");
+            mediaElement.src = project.mediaSrc;
+            mediaElement.alt = project.title;
+            mediaElement.onerror = function () {
+              this.onerror = null;
+              this.src =
+                "https://placehold.co/800x1000/e2e8f0/a0aec0?text=Image+Not+Found";
+            };
+          }
 
-                // --- Common Styling and Attributes for both Images and Videos ---
-                const initialRotation = rotationAccumulator + (Math.random() * 2 - 1);
-                mediaElement.style.transform = `rotate(${initialRotation}deg) scale(0.95)`;
-                mediaElement.dataset.rotation = initialRotation;
-                
-                // Use a consistent data attribute for all media types
-                mediaElement.dataset.mediaId = project.id;
-                mediaElement.className = `absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 ease-in-out rounded-lg shadow-xl opacity-0`;
-                
-                mediaContainer.appendChild(mediaElement);
+          // --- Common Styling and Attributes for both Images and Videos ---
+          const initialRotation = rotationAccumulator + (Math.random() * 2 - 1);
+          mediaElement.style.transform = `rotate(${initialRotation}deg) scale(0.95)`;
+          mediaElement.dataset.rotation = initialRotation;
 
-                rotationAccumulator += 3; // Increment rotation for the next item
-            });
+          // Use a consistent data attribute for all media types
+          mediaElement.dataset.mediaId = project.id;
+          mediaElement.className = `absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 ease-in-out rounded-lg shadow-xl ${
+            i !== 0 && "opacity-0"
+          }`;
 
-            setupHomePageEventListeners();
-        };
+          mediaContainer.appendChild(mediaElement);
 
-        // --- EVENT LISTENERS ---
-        function setupHomePageEventListeners() {
-            const links = document.querySelectorAll('.project-link-item');
-            links.forEach(link => {
-                // --- MOUSE ENTER: Show and play media ---
-                link.addEventListener('mouseenter', () => {
-                    const projectId = link.dataset.projectId;
-                    // Select any media element (img or video) with the matching data-media-id
-                    const mediaElement = document.querySelector(`[data-media-id='${projectId}']`);
+          rotationAccumulator += 3; // Increment rotation for the next item
+        });
 
-                    if (mediaElement) {
-                        mediaElement.style.opacity = '1';
-                        const rotation = mediaElement.dataset.rotation;
-                        mediaElement.style.transform = `rotate(${rotation}deg) scale(1)`;
-                        mediaElement.style.zIndex = zCounter;
-                        zCounter++;
+        setupHomePageEventListeners();
+      };
 
-                        // If the element is a video, play it
-                        if (mediaElement.tagName === 'VIDEO') {
-                            mediaElement.play();
-                        }
-                    }
-                });
+      // --- EVENT LISTENERS ---
+      function setupHomePageEventListeners() {
+        const links = document.querySelectorAll(".project-link-item");
+        links.forEach((link) => {
+          // --- MOUSE ENTER: Show and play media ---
+          link.addEventListener("mouseenter", () => {
+            const projectId = link.dataset.projectId;
+            // Select any media element (img or video) with the matching data-media-id
+            const mediaElement = document.querySelector(
+              `[data-media-id='${projectId}']`
+            );
 
-                // --- MOUSE LEAVE: Pause video ---
-                link.addEventListener('mouseleave', () => {
-                    const projectId = link.dataset.projectId;
-                    const mediaElement = document.querySelector(`[data-media-id='${projectId}']`);
+            if (mediaElement) {
+              mediaElement.style.opacity = "1";
+              const rotation = mediaElement.dataset.rotation;
+              mediaElement.style.transform = `rotate(${rotation}deg) scale(1)`;
+              mediaElement.style.zIndex = zCounter;
+              zCounter++;
 
-                    if (mediaElement && mediaElement.tagName === 'VIDEO') {
-                        // If the element is a video, pause it and reset its time
-                        mediaElement.pause();
-                        mediaElement.currentTime = 0; // Rewind to the start
-                    }
-                });
-            });
-        }
+              // If the element is a video, play it
+              if (mediaElement.tagName === "VIDEO") {
+                mediaElement.play();
+              }
+            }
+          });
 
-        // --- INITIALIZATION ---
-        document.addEventListener('DOMContentLoaded', renderHomePage);
+          // --- MOUSE LEAVE: Pause video ---
+          link.addEventListener("mouseleave", () => {
+            const projectId = link.dataset.projectId;
+            const mediaElement = document.querySelector(
+              `[data-media-id='${projectId}']`
+            );
 
+            if (mediaElement && mediaElement.tagName === "VIDEO") {
+              // If the element is a video, pause it and reset its time
+              mediaElement.pause();
+              mediaElement.currentTime = 0; // Rewind to the start
+            }
+          });
+        });
+      }
+
+      // --- INITIALIZATION ---
+      document.addEventListener("DOMContentLoaded", renderHomePage);
     </script>
-</body>
+    <script type="module">
+      import WaveSurfer from "https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js";
 
+      const wavesurfer = WaveSurfer.create({
+        container: "#landing-waveform",
+        height: 44,
+        width: "100%",
+        waveColor: "#000f9f",
+        progressColor: "#383351",
+        url: "./audio/ocean.mp3",
+        barWidth: 5,
+        barGap: 2,
+        barRadius: 28,
+        barHeight: 1.2,
+        barAlign: "",
+      });
+
+      document.getElementById("play").addEventListener("click", (e) => {
+        const isPlaying = wavesurfer.isPlaying();
+
+        if (isPlaying) {
+          wavesurfer.pause();
+          e.target.innerHTML = "Play";
+          e.target.innerText = "Play";
+        } else {
+          wavesurfer.play();
+          e.target.innerHTML = "Pause";
+          e.target.innerText = "Pause";
+        }
+      });
+
+      wavesurfer.on("interaction", () => {
+        wavesurfer.play();
+      });
+    </script>
+  </body>
 </html>
