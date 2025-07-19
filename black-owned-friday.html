@@ -25,20 +25,17 @@
   </head>
 
   <body class="antialiased">
-    <div class="max-w-7xl mx-auto pt-0 p-6 md:p-10">
-      <header class="relative mb-12">
-        <a
-          href="index.html"
-          class="text-gray-600 hover:text-black text-m flex justify-between"
-        >
-          <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
-            Robin Hunter
-          </h1>
-          <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
-            See More
-          </h1>
-        </a>
-      </header>
+    <div class="max-w-7xl mx-auto p-6 md:p-10">
+      <a
+        href="index.html"
+        class="text-gray-600 hover:text-black text-m flex justify-between md:mb-16 mb-8"
+        style="align-items: center"
+      >
+        <h1 class="text-2xl md:text-4xl font-bold tracking-tight">
+          Robin Hunter
+        </h1>
+        <h1 class="text-md md:text-2xl tracking-tight">↖️ More projects</h1>
+      </a>
 
       <div class="max-w-7xl mt-8 mb-8 mx-auto">
         <h1 class="text-3xl md:text-6xl font-bold tracking-tight">
@@ -74,40 +71,50 @@
 
       <main class="max-w-7xl">
         <p class="mb-4">
-          Google’s Black-Owned Friday was an interactive shopping music video
-          experience like no other—featuring T-Pain, Normani, and over 100
-          products from more than 50 Black-owned businesses. Built in
-          partnership with the U.S. Black Chambers, the campaign fused
-          entertainment and e-commerce, encouraging shoppers to support
-          Black-owned brands during the holiday season. As viewers made
-          narrative choices mid-video, they could also shop featured products
-          woven seamlessly into the scenes.
+          Black Owned Friday is a Google initiative that encourages people to
+          support Black-owned businesses, particularly on Black Friday, by
+          highlighting them and providing resources to find them. Our team at
+          Rehab Agency was tasked with creating an interactive music video
+          featuring T-Pain.
+          <span class="font-bold"
+            >The creative vision was a blend of entertainment and
+            e-commerce:</span
+          >
+          a choose-your-own-adventure film where viewers could shop for products
+          from over 50 Black-owned businesses directly from the scenes as the
+          story unfolded. screen.
         </p>
 
         <p class="mb-4">
-          I led the prototyping and engineering of the custom video delivery
-          system. Using Node.js, I built a dynamic streaming solution that
-          assembled M3U8 video streams on the fly—injecting video segments in
-          real time based on the user’s decisions. The experience was hosted on
-          Google Cloud, with the backend Node service handling stream logic and
-          video delivery. The final front end was built in Angular, integrating
-          the stream seamlessly into a highly polished interface. Like Gromit
-          laying train tracks mid-chase, we kept the story running while content
-          loaded dynamically ahead.
+          <span class="font-bold">
+            My role was to lead prototyping and engineering of the custom video
+            delivery system</span
+          >. Using Node.js, I built a dynamic streaming solution that assembled
+          M3U8 video streams on the fly—injecting video segments in real time
+          based on the user’s decisions. Like Gromit laying train tracks
+          mid-chase, but Javascript. The experience used
+          <span class="font-bold"
+            >a range of Google Cloud services on the back-end</span
+          >, with the backend Node service handling stream logic and video
+          delivery. The
+          <span class="font-bold">front end was built in Angular</span>,
+          integrating the stream seamlessly into a highly polished interface.
         </p>
         <p class="mb-4">
-          The biggest challenge was managing latency, especially on poor
-          connections, which required careful stream handling and preloading
-          strategies. While the video content itself was handled by a separate
-          team, our real-time infrastructure was what made the branching feel
-          responsive and immersive. The project landed brilliantly, helped
-          cement Google as a long-term client for the agency, and gave me the
-          surreal but brilliant experience of counting T-Pain as a stakeholder.
+          <span class="font-bold"
+            >The biggest challenge was managing latency on poor
+            connections</span
+          >. We overcame this with smart fallbacks and default journeys so the
+          flow would always be setup in good time, but the user could alter its
+          course if they interacted with the choose-your-adventure feature. The
+          project was a hit and helped cement Google as a long-term client for
+          Rehab Agency. Having T-Pain as a stakeholder was fun, you dont say
+          that every day!
         </p>
 
         <p>
-          The interactive site is no longer active, but you can check out the 
-          main video below. 
+          The interactive site is no longer active, but you can play the main
+          music video below.
         </p>
 
         <iframe

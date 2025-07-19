@@ -25,18 +25,17 @@
   </head>
 
   <body class="antialiased">
-    <div class="max-w-7xl mx-auto pt-0 p-6 md:p-10">
+    <div class="max-w-7xl mx-auto p-6 md:p-10">
       <header class="relative mb-12">
         <a
           href="index.html"
-          class="text-gray-600 hover:text-black text-m flex justify-between"
+          class="text-gray-600 hover:text-black text-m flex justify-between md:mb-16 mb-8"
+          style="align-items: center"
         >
-          <h1 class="text-3xl md:text-6xl font-bold tracking-tight">
+          <h1 class="text-2xl md:text-4xl font-bold tracking-tight">
             Robin Hunter
           </h1>
-          <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
-            See More
-          </h1>
+          <h1 class="text-md md:text-2xl tracking-tight">↖️ More projects</h1>
         </a>
       </header>
 
@@ -45,18 +44,9 @@
           Burberry Archive Projects
         </h1>
         <p class="mt-4 text-base md:text-lg text-gray-600 max-w-2xl">
-          Using new technologies to bring the 175-year Burberry Archive to life.
+          Using AI and 3D to bring stories from the 175-year Burberry Archive to
+          life in new ways.
         </p>
-        <div class="text-base text-gray-600 max-w-2xl">
-          <p class="mt-2">
-            <a
-              href="https://creativetech.static.burberry.com/archive-in-store-audio/live/index.html#/polar"
-              target="_blank"
-              class="underline hover:text-black"
-              >3D Archive Microsite</a
-            >
-          </p>
-        </div>
       </div>
 
       <div class="max-w-md my-8 player-container" id="waveform">
@@ -68,47 +58,70 @@
         </button>
       </div>
 
+      <p class="mb-4">
+        At Burberry, I have the privilege of working closely with our archive
+        team. Together, we’ve explored how creative technology can reframe
+        historical materials and bring them to life through modern tools. While
+        much of this work is under NDA, these two public-facing projects
+        demonstrate how we’ve begun to merge tradition with generative AI + the
+        3D web in a meaningful way.
+      </p>
+
       <main class="max-w-7xl">
         <h1 class="text-1xl md:text-3xl font-bold tracking-tight mb-3">
-          Burberry Animated Archive
+          Project 1 - Burberry Animated Archive (2025)
         </h1>
 
         <p class="mb-4">
-          At Burberry, I have the privilege of working closely with our archive
-          team. Together, we’ve explored how creative technology can reframe
-          historical materials and bring them to life through modern tools.
-          While much of this work is under NDA, one public-facing project, The
-          Animated Archive, demonstrates how we’ve begun to merge tradition with
-          generative AI in a meaningful way.
+          <span class="font-bold"
+            >My role in this project was Generative AI prototyping</span
+          >
+          and the project started with us investigating how still imagery could
+          be animated using AI. We explored a range of AI SAAS platforms, as
+          well as OpenAI's 4o image generation, Google Veo, custom pipelines
+          using ComfyUI and so on. We had many meeting with a range of vendors
+          to gain insight into AI roadmaps and understand the state of the art.
+          I then prototyped the same image/prompt across different platforms to
+          appraise which was capable of creating an elevated enough output for a
+          luxury brand.
         </p>
 
         <p class="mb-4">
-          The project started with us exploring and prototyping how still
-          imagery could be animated using AI. We explored a range of AI SAAS
-          platforms, as well as OpenAI's 4o image generation, Google Veo, custom
-          pipelines using ComfyUI and so on. We had many meeting with a range of
-          vendors to gain insight into AI roadmaps and understand the state of
-          the art.
+          <span class="font-bold">
+            A big challenge was navigating the legal implications</span
+          >
+          of using generative AI on copyrighted material. We worked in close
+          contact with the legal teams to pick the right tools and a framework
+          that balanced innovation with brand protection.
         </p>
+
         <p class="mb-4">
           The archive team selected three classic photographs by Lord Lichfield
           - quintessentially British scenes featuring a couple in the iconic
           Burberry trench coat. I led prompt engineering across a range of
           generative AI platforms and ultimately landed on Runway to animate
-          subtle weather elements like fog and drifting clouds. A big part of
-          the process also involved working closely with our legal team to
-          navigate rights and the implications of using AI with archival
-          imagery.
+          subtle weather elements like fog and drifting clouds.
         </p>
 
         <p class="mb-4">
-          Beyond the AI work, I used image segmentation to isolate backgrounds
-          and animate only the atmospheric elements, preserving the integrity of
-          the original compositions. These layers were then stitched together by
-          the video team to create a seamless, living portrait. The final result
-          was cinematic and the CMO showcased it during the all-hands results
-          day call. The mixture of true heritage aesthetic quality and modern AI
-          is a nice juxtaposition.
+          I found that using AI image segmentation to isolate backgrounds and
+          animate only the atmospheric elements preserved the integrity of the
+          original scenes.
+          <span class="font-bold"
+            >I collaborated with our in-house video team</span
+          >, providing them with the animated layers to perform the final
+          compositing, who created a seamless, living portrait in
+          post-production.
+        </p>
+
+        <p class="mb-4">
+          The final results are cinematic and together racked up over
+          <span class="font-bold">1,000,000 views on Instagram reels</span>.The
+          CMO also showcased it during the global all-hands results day meeting
+          shortly after posting. The result is a powerful juxtaposition:
+          leveraging cutting-edge AI not to replace human creativity but to
+          deepen the appreciation for the brand's timeless heritage and
+          priceless aesthetic history.
         </p>
       </main>
     </div>
@@ -944,40 +957,44 @@
 
     <div class="max-w-7xl mx-auto pt-0 p-6 md:p-10">
       <h1 class="text-1xl md:text-3xl font-bold tracking-tight mb-3">
-        Burberry Animated Archive
+        Project 2 - 3D instore Archive microsite (2024)
       </h1>
 
       <p class="mb-4">
-        As part of our ongoing collaboration with Burberry’s archive team, we
-        created an interactive 3D microsite to bring historical pieces into the
-        retail environment. The concept began as a fork of an internal archive
-        showcase originally developed for Thomas Burberry’s 188th birthday. From
-        there, we worked closely with our 3D team to model key artefacts—like
-        the Shackleton Snowsuit, the original Tielocken, and a classic car
-        coat—alongside a selection of lesser-known trinkets that reveal the
-        brand’s deep material history.
+        This project began as an internal-facing 3D showcase that I built to
+        celebrate the Thomas Burberry's 188th birthday.The tool was picked by
+        the stores team to be adapated to become a premium story telling tool
+        for the client advisors. The public facing version was adapated by a
+        creative developer i manage and my role transitioned to code reviews,
+        creative oversight and testing.
       </p>
 
       <p class="mb-4">
-        The experience was built in React Three Fibre and Drei, using a clean,
-        declarative HTML-like structure to present the 3D content with clarity
-        and polish. I collaborated on the product definition and experience
-        architecture, while the final AR functionality was implemented through a
-        clever use of Google’s model-viewer allowing store staff to project the
-        archive into physical space using tablets. The microsite launched in
-        Burberry flagship stores worldwide, including Regent Street, as a
-        premium sales enablement tool.
+        The experience was built in
+        <span class="font-bold">React Three Fibre and Drei</span>, using a
+        clean, declarative HTML-like structure to present the 3D content with
+        clarity and polish. The core technical challenge remained ensuring a
+        high-fidelity 3D experience was flawlessly performant on in-store
+        tablets. The solution, which I had architected in the original version,
+        involved a pipeline using
+        <span class="font-bold"
+          >meshopt for model optimisation and leveraging Google's
+          model-viewer</span
+        >
       </p>
 
       <p class="mb-4">
-        We also worked closely with Carly Eck, Head of Archive, who recorded
-        voice notes to narrate each piece. Regular review sessions ensured the
-        digital models remained true to life, preserving the integrity of the
-        garments while creating a future-facing way to unlock Burberry’s
-        proprietary archive.
+        The result was a future-facing tool that
+        <span class="font-bold"
+          >launched in 7 flagship stores worldwide, including Regent
+          Street</span
+        >. The public version featured voice-note narrations from the Head of
+        Archive, Carly Eck. The site established a scalable way for bringing
+        Burberry’s 175 year archive to life in a weightless digital way, however
+        far from home the store is.
       </p>
 
-      <p>Take a peek below!</p>
+      <p>Explore the live microsite below</p>
     </div>
 
     <div class="max-w-7xl mx-auto pt-0 p-6 md:p-10">

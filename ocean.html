@@ -26,18 +26,17 @@
   </head>
 
   <body class="antialiased">
-    <div class="max-w-7xl mx-auto pt-0 p-6 md:p-10">
+    <div class="max-w-7xl mx-auto p-6 md:p-10">
       <header class="relative mb-12">
         <a
           href="index.html"
-          class="text-gray-600 hover:text-black text-m flex justify-between"
+          class="text-gray-600 hover:text-black text-m flex justify-between md:mb-16 mb-8"
+          style="align-items: center"
         >
-          <h1 class="text-3xl md:text-6xl font-bold tracking-tight">
+          <h1 class="text-2xl md:text-4xl font-bold tracking-tight">
             Robin Hunter
           </h1>
-          <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
-            See More
-          </h1>
+          <h1 class="text-md md:text-2xl tracking-tight">↖️ More projects</h1>
         </a>
       </header>
 
@@ -67,44 +66,79 @@
         </button>
       </div>
 
-      <main class="max-w-7xl">
-        <p class="mb-4">
-          Ocean is a collaborative online music-making platform that I have been
-          developing over the past several years. It started as my postgraduate
-          research into interaction design / technical architecture for
-          web-based creative collaboration. Since then, I have personally
-          engineered and continuously refined the codebase adding new features
-          as i go.
+      <main class="max-w-3xl">
+        <p class="mb-4 font-bold">
+          My Role: Founder, Architect & Lead Developer
         </p>
+
         <p class="mb-4">
-          The platform is designed to make music creation accessible for
-          beginners. It enables users to drag and drop sounds, sequence beats,
-          and instantly share their work, playing directly to the web's
-          strengths of shareability and rapid cybernetic loop of idea - post -
-          feedback.
+          Ocean was born from a question that drove my postgraduate research at
+          Goldsmiths: how can we design web tools that make music collaboration
+          intuitive and joyful? The result is a collaborative online
+          music-making platform I devised, engineered, and continuously iterated
+          over the past several years.
+          <span class="font-bold">
+            used daily by people around the world to make music.</span
+          >
+        </p>
+
+        <p class="mb-4">
+          <span class="font-bold">The Platform & Technology:</span>
+          The platform is designed to make music creation accessible, enabling
+          users to drag and drop sounds, sequence beats, and instantly share
+          their tracks. It's built to play to the web's strengths: shareability
+          and the rapid feedback loop between idea and audience. To date, the
+          platform has organically grown to support a community of over 30,000
+          users worldwide.
+        </p>
+        <p class="mb-4">Technology Stack:</p>
+        <ul class="list-disc px-8 max-w-2xl">
+          <li class="mb-4">
+            Frontend: React, Tailwind, Tone.js (Web Audio API) for all audio
+            synthesis and sequencing.
+          </li>
+          <li class="mb-4">
+            Backend: Meteor.js for realtime collaboration and Stripe for
+            payments.
+          </li>
+          <li class="mb-4">
+            Database: MongoDB to store user projects and sessions.
+          </li>
+          <li class="mb-4">
+            Infrastructure: Hosted on Meteor Cloud, AWS S3 for storing samples
+            and Algolia a search layer.
+          </li>
+        </ul>
+
+        <p class="mb-4">
+          I focused on playful and fun UX to drive sign ups and engagement in
+          the tool. A key update I made was creating a slimmed down demo version
+          the user could play with without signing up, with a nudge after 30s to
+          sign up and save their work.
+          <span class="font-bold"
+            >This increased sign up conversation by 10x.</span
+          >
         </p>
 
         <img src="./img/ocean-action.png" class="w-100 my-8" />
 
         <p class="mb-4">
-          Ocean has grown over the years to 30,000~ users worldwide. Checking
-          the site and seeing new people use Ocean for a moment of
-          self-expression is always a nice start to the morning.
-        </p>
-        <p class="mb-4">
-          Looking ahead, I am exploring how to gamify the experience and, more
-          significantly, how to integrate AI-powered tooling. My focus is on
-          leveraging generative models to introduce sophisticated musical
-          elements, like harmony, and to explore AI-driven audio generation.
-          This work is aimed at building custom pipelines that can unlock new
-          creative possibilities and produce novel expressions, pushing the
-          technical and creative boundaries of the platform.
+          <span class="font-bold">The Future: AI-Powered Creativity</span>.
+          Looking ahead, I am actively exploring how AI tools like Google
+          Magenta could integrate into Ocean and unlock new creative outcomes
+          for the users. My focus is on leveraging generative models to generate
+          raw audio loops and midi beat patterns to help bridge the gap between
+          ideas and sound. I am also exploring how LLMs can enable a learning
+          platform within the site, giving users information and links to the
+          electronic music canon for reference and inspiration.
         </p>
 
         <p class="mb-4">
-          A few years ago now I spoke to Music Hackspace about this project,
-          check out the video below. (ignore my lockdown haircut)
+          A few years ago, I spoke to Music Hackspace about this project's
+          journey. You can check out the video below (and please ignore my
+          lockdown haircut).
         </p>
+
         <iframe
           width="100%"
           height="540"
