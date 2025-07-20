@@ -60,14 +60,50 @@
         </div>
       </div>
 
-      <div class="max-w-md my-8 player-container" id="waveform">
+      <!-- Simplified Player Component -->
+      <div
+        class="max-w-md bg-white rounded-xl mb-2 shadow-sm p-4 flex items-center space-x-3"
+      >
+        <!-- Play/Pause Button -->
         <button
           id="play"
-          class="text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 gap-3"
+          class="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          <span class="w-100 text-center">Play project voice memo</span>
+          <!-- Play Icon -->
+          <svg
+            id="play-icon"
+            class="w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"
+            ></path>
+          </svg>
+          <!-- Pause Icon (hidden by default) -->
+          <svg
+            id="pause-icon"
+            class="w-5 h-5 hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.75 4.75a.75.75 0 00-.75.75v9.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75v-9.5a.75.75 0 00-.75-.75h-1.5zm6.5 0a.75.75 0 00-.75.75v9.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75v-9.5a.75.75 0 00-.75-.75h-1.5z"
+            ></path>
+          </svg>
         </button>
+
+        <!-- Waveform and Time -->
+        <div class="flex-grow flex items-center space-x-3">
+          <div id="waveform" class="w-full h-12 cursor-pointer"></div>
+          <div class="text-xs font-mono text-gray-500 whitespace-nowrap">
+            <span id="current-time">0:00</span> /
+            <span id="total-duration">0:00</span>
+          </div>
+        </div>
       </div>
+
+      <p class="mb-8 text-xs">Listen to a voicenote overview of this project</p>
 
       <main class="max-w-7xl">
         <p class="mb-4">
@@ -133,38 +169,81 @@
   </body>
 
   <script type="module">
-    import WaveSurfer from "https://cdn.jsdelivr.net/npm/wavesurfer.js@7/dist/wavesurfer.esm.js";
+    // Import WaveSurfer from the ESM CDN link, as your JS code does.
+    import WaveSurfer from "https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js";
 
-    const wavesurfer = WaveSurfer.create({
-      container: "#waveform",
-      height: 44,
-      width: "100%",
-      waveColor: "#000f9f",
-      progressColor: "#383351",
-      url: "./audio/friday.mp3",
-      barWidth: 5,
-      barGap: 2,
-      barRadius: 28,
-      barHeight: 1.2,
-      barAlign: "",
-    });
+    const AUDIO_FILE_URL = "./audio/friday.mp3";
 
-    document.getElementById("play").addEventListener("click", (e) => {
-      const isPlaying = wavesurfer.isPlaying();
+    // Get DOM elements
+    const playBtn = document.getElementById("play");
+    const playIcon = document.getElementById("play-icon");
+    const pauseIcon = document.getElementById("pause-icon");
+    const currentTimeEl = document.getElementById("current-time");
+    const totalDurationEl = document.getElementById("total-duration");
 
-      if (isPlaying) {
-        wavesurfer.pause();
-        e.target.innerHTML = "Play";
-        e.target.innerText = "Play";
-      } else {
-        wavesurfer.play();
-        e.target.innerHTML = "Pause";
-        e.target.innerText = "Pause";
+    // Helper function to format time in MM:SS
+    const formatTime = (seconds) => {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+    };
+
+    try {
+      // Create a WaveSurfer instance
+      const wavesurfer = WaveSurfer.create({
+        container: "#waveform",
+        height: 48,
+        waveColor: "#d1d5db", // gray-300
+        progressColor: "#3b82f6", // blue-500
+        url: AUDIO_FILE_URL,
+        barWidth: 4,
+        barGap: 2,
+        barRadius: 4,
+        cursorWidth: 2,
+        cursorColor: "#1f2937", // gray-800
+      });
+
+      // --- EVENT LISTENERS (as provided in your JS) ---
+
+      // 1. Play/Pause button click
+      playBtn.addEventListener("click", () => {
+        wavesurfer.playPause();
+      });
+
+      // 2. Update button icon on play
+      wavesurfer.on("play", () => {
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+      });
+
+      // 3. Update button icon on pause
+      wavesurfer.on("pause", () => {
+        playIcon.classList.remove("hidden");
+        pauseIcon.classList.add("hidden");
+      });
+
+      // 4. Update timer on audio progress
+      wavesurfer.on("timeupdate", (currentTime) => {
+        currentTimeEl.textContent = formatTime(currentTime);
+      });
+
+      // 5. Set initial duration when audio is ready
+      wavesurfer.on("ready", (duration) => {
+        totalDurationEl.textContent = formatTime(duration);
+      });
+
+      // 6. Reset button when audio finishes
+      wavesurfer.on("finish", () => {
+        playIcon.classList.remove("hidden");
+        pauseIcon.classList.add("hidden");
+      });
+    } catch (error) {
+      console.error("Error initializing audio player:", error);
+      const waveformContainer = document.getElementById("waveform");
+      if (waveformContainer) {
+        waveformContainer.innerHTML =
+          '<p class="text-red-500 text-xs text-center">Could not load audio.</p>';
       }
-    });
-
-    wavesurfer.on("interaction", () => {
-      wavesurfer.play();
-    });
+    }
   </script>
 </html>
