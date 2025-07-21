@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-1LHW2D9P8S"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-1LHW2D9P8S");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Robin Hunter - Creative Technologist</title>
@@ -58,14 +72,14 @@
           <p>
             <a
               href="mailto:robin.h.94@gmail.com"
-              class="underline hover:text-black"
+              class="underline text-blue-500 hover:text-blue-800"
               >robin.h.94@gmail.com</a
             >
             <span class="mx-2">&bull;</span>
             <a
               href="https://www.linkedin.com/in/futurerobin/"
               target="_blank"
-              class="underline hover:text-black"
+              class="underline text-blue-500 hover:text-blue-800"
               >LinkedIn</a
             >
           </p>
@@ -117,7 +131,7 @@
           id: "burberry-archive-ai",
           title: "Burberry Archive Experiments",
           category:
-            "Using Generative AI and 3D to bring 175 years of British aesthetic history to life",
+            "Using Generative AI & 3D to bring 175 years of British aesthetic history to life",
           mediaType: "video",
           mediaSrc: "./video/waves.webm",
           poster: "",
@@ -135,7 +149,7 @@
           id: "burberry-harrods-takeover",
           title: "Burberry x Harrods",
           category:
-            "An interactive AI photobooth and Roblox world for the 190 year old store",
+            "An AI photobooth & Roblox world for the 190 year old store",
           mediaType: "video",
           mediaSrc: "./video/harrods-intro.mp4",
           poster: "./img/harrods.jpeg",
@@ -143,7 +157,7 @@
         {
           id: "black-owned-friday",
           title: "Google Black Owned Friday",
-          category: "An infinite, shoppable music video (featuring T-Pain)",
+          category: "An interactive & shoppable music video (featuring T-Pain)",
           mediaType: "video",
           mediaSrc: "./video/friday.mp4",
           poster: "./img/friday.jpg",
@@ -179,12 +193,12 @@
           // Create the project link item
           const projectItem = document.createElement("div");
           projectItem.className =
-            "project-link-item block p-2 -ml-2 mb-2 cursor-pointer hover:bg-gray-100 rounded-md transition-colors";
+            "project-link-item block p-2 -ml-2 mb-2 cursor-pointer hover:bg-gray-200 rounded-md transition-colors";
           projectItem.dataset.projectId = project.id;
 
           projectItem.innerHTML = `
-                    <span class="project-title font-medium text-2xl md:text-3xl">${project.title}</span>
-                    <span class="block text-gray-500 text-sm mt-1">${project.category}</span>
+                    <span class="project-title text-blue-500 font-medium text-2xl md:text-3xl">${project.title}</span>
+                    <span class="block text-gray-700 text-sm mt-1">${project.category}</span>
                 `;
 
           projectItem.addEventListener("click", () => {
